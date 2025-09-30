@@ -1,0 +1,2072 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "symbols",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "Eq",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "solve",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "symbols",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "Eq",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "solve",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "optim",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "optim",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "optim",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "optim",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "optim",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "optim",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "torch.nn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "functional",
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "isExtraImport": true,
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "functional",
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "isExtraImport": true,
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "functional",
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "isExtraImport": true,
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "functional",
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "isExtraImport": true,
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "functional",
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "isExtraImport": true,
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "functional",
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "isExtraImport": true,
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "TensorDataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "transforms",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "transforms",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "transforms",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "transforms",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "datasets",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "transforms",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "transforms",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "ndimage",
+        "importPath": "scipy",
+        "description": "scipy",
+        "isExtraImport": true,
+        "detail": "scipy",
+        "documentation": {}
+    },
+    {
+        "label": "ndimage",
+        "importPath": "scipy",
+        "description": "scipy",
+        "isExtraImport": true,
+        "detail": "scipy",
+        "documentation": {}
+    },
+    {
+        "label": "ndimage",
+        "importPath": "scipy",
+        "description": "scipy",
+        "isExtraImport": true,
+        "detail": "scipy",
+        "documentation": {}
+    },
+    {
+        "label": "ndimage",
+        "importPath": "scipy",
+        "description": "scipy",
+        "isExtraImport": true,
+        "detail": "scipy",
+        "documentation": {}
+    },
+    {
+        "label": "ndimage",
+        "importPath": "scipy",
+        "description": "scipy",
+        "isExtraImport": true,
+        "detail": "scipy",
+        "documentation": {}
+    },
+    {
+        "label": "ndimage",
+        "importPath": "scipy",
+        "description": "scipy",
+        "isExtraImport": true,
+        "detail": "scipy",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "PIL",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "PIL",
+        "description": "PIL",
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "isExtraImport": true,
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "isExtraImport": true,
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "isExtraImport": true,
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "isExtraImport": true,
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "isExtraImport": true,
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "isExtraImport": true,
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "isExtraImport": true,
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "isExtraImport": true,
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "isExtraImport": true,
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "isExtraImport": true,
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "isExtraImport": true,
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "UNet",
+        "importPath": "model",
+        "description": "model",
+        "isExtraImport": true,
+        "detail": "model",
+        "documentation": {}
+    },
+    {
+        "label": "UNet",
+        "importPath": "model",
+        "description": "model",
+        "isExtraImport": true,
+        "detail": "model",
+        "documentation": {}
+    },
+    {
+        "label": "UNet",
+        "importPath": "model",
+        "description": "model",
+        "isExtraImport": true,
+        "detail": "model",
+        "documentation": {}
+    },
+    {
+        "label": "UNet",
+        "importPath": "model",
+        "description": "model",
+        "isExtraImport": true,
+        "detail": "model",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.patheffects",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.patheffects",
+        "description": "matplotlib.patheffects",
+        "detail": "matplotlib.patheffects",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.patches",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.patches",
+        "description": "matplotlib.patches",
+        "detail": "matplotlib.patches",
+        "documentation": {}
+    },
+    {
+        "label": "MaxNLocator",
+        "importPath": "matplotlib.ticker",
+        "description": "matplotlib.ticker",
+        "isExtraImport": true,
+        "detail": "matplotlib.ticker",
+        "documentation": {}
+    },
+    {
+        "label": "FixedLocator",
+        "importPath": "matplotlib.ticker",
+        "description": "matplotlib.ticker",
+        "isExtraImport": true,
+        "detail": "matplotlib.ticker",
+        "documentation": {}
+    },
+    {
+        "label": "FormatStrFormatter",
+        "importPath": "matplotlib.ticker",
+        "description": "matplotlib.ticker",
+        "isExtraImport": true,
+        "detail": "matplotlib.ticker",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "OrderedDict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "isExtraImport": true,
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "isExtraImport": true,
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "isExtraImport": true,
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "importPath": "skimage",
+        "description": "skimage",
+        "isExtraImport": true,
+        "detail": "skimage",
+        "documentation": {}
+    },
+    {
+        "label": "transform",
+        "importPath": "skimage",
+        "description": "skimage",
+        "isExtraImport": true,
+        "detail": "skimage",
+        "documentation": {}
+    },
+    {
+        "label": "img_as_float",
+        "importPath": "skimage",
+        "description": "skimage",
+        "isExtraImport": true,
+        "detail": "skimage",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "torchvision.datasets",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torchvision.datasets",
+        "description": "torchvision.datasets",
+        "detail": "torchvision.datasets",
+        "documentation": {}
+    },
+    {
+        "label": "ToTensor",
+        "importPath": "torchvision.transforms",
+        "description": "torchvision.transforms",
+        "isExtraImport": true,
+        "detail": "torchvision.transforms",
+        "documentation": {}
+    },
+    {
+        "label": "Variable",
+        "importPath": "torch.autograd",
+        "description": "torch.autograd",
+        "isExtraImport": true,
+        "detail": "torch.autograd",
+        "documentation": {}
+    },
+    {
+        "label": "torch.nn.functional",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.nn.functional",
+        "description": "torch.nn.functional",
+        "detail": "torch.nn.functional",
+        "documentation": {}
+    },
+    {
+        "label": "make_grid",
+        "importPath": "torchvision.utils",
+        "description": "torchvision.utils",
+        "isExtraImport": true,
+        "detail": "torchvision.utils",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "warnings",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "warnings",
+        "description": "warnings",
+        "detail": "warnings",
+        "documentation": {}
+    },
+    {
+        "label": "resize_and_save_images",
+        "kind": 2,
+        "importPath": "Jupyter.PhD Code Implementation.resize-images",
+        "description": "Jupyter.PhD Code Implementation.resize-images",
+        "peekOfCode": "def resize_and_save_images(input_dir, output_dir, target_width=512, target_height=256):\n    # Ensure the output directory exists\n    if not os.path.exists(output_dir):\n        os.makedirs(output_dir)\n    # Get a list of image filenames in the input directory\n    image_filenames = [filename for filename in os.listdir(input_dir) if filename.endswith('.png')]\n    print(image_filenames)\n    for image_filename in image_filenames:\n        try:\n            # Load the image",
+        "detail": "Jupyter.PhD Code Implementation.resize-images",
+        "documentation": {}
+    },
+    {
+        "label": "bul",
+        "kind": 2,
+        "importPath": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "def bul(x1, y1, x2, y2, x5):\n    m = (y2 - y1) / (x2 - x1)\n    x, y = symbols('x y')\n    eq1 = Eq(y - y2 - (m * x - m * x2), 0)\n    eq2 = Eq(x - x5, 0)\n    solution = solve([eq1, eq2], [x, y])\n    x_value = solution[x]\n    y_value = solution[y]\n    y_value = round(y_value)\n    return y_value",
+        "detail": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "filename",
+        "kind": 5,
+        "importPath": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "filename = 'C:/Users/MasterChef/Desktop/data_47_48.xlsx'\ndata_47_48 = pd.read_excel(filename)\n# Y5_47_48_veri.xlsx dosyasını oku\nfilename1 = 'C:/Users/MasterChef/Desktop/Y5_47_48_veri.xlsx'\nY5_47_48 = pd.read_excel(filename1)\n# Boyutu al\nkk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']",
+        "detail": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "data_47_48",
+        "kind": 5,
+        "importPath": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "data_47_48 = pd.read_excel(filename)\n# Y5_47_48_veri.xlsx dosyasını oku\nfilename1 = 'C:/Users/MasterChef/Desktop/Y5_47_48_veri.xlsx'\nY5_47_48 = pd.read_excel(filename1)\n# Boyutu al\nkk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']\n    y1 = data_47_48.loc[i, 'Column2']",
+        "detail": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "filename1",
+        "kind": 5,
+        "importPath": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "filename1 = 'C:/Users/MasterChef/Desktop/Y5_47_48_veri.xlsx'\nY5_47_48 = pd.read_excel(filename1)\n# Boyutu al\nkk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']\n    y1 = data_47_48.loc[i, 'Column2']\n    x2 = data_47_48.loc[i, 'Column3']\n    y2 = data_47_48.loc[i, 'Column4']",
+        "detail": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "Y5_47_48",
+        "kind": 5,
+        "importPath": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "Y5_47_48 = pd.read_excel(filename1)\n# Boyutu al\nkk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']\n    y1 = data_47_48.loc[i, 'Column2']\n    x2 = data_47_48.loc[i, 'Column3']\n    y2 = data_47_48.loc[i, 'Column4']\n    x5 = data_47_48.loc[i, 'Column9']",
+        "detail": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "kk",
+        "kind": 5,
+        "importPath": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "kk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']\n    y1 = data_47_48.loc[i, 'Column2']\n    x2 = data_47_48.loc[i, 'Column3']\n    y2 = data_47_48.loc[i, 'Column4']\n    x5 = data_47_48.loc[i, 'Column9']\n    y = bul(x1, y1, x2, y2, x5)\n    Y5_47_48.loc[i, 'Column2'] = y",
+        "detail": "Jupyter.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "eğim_hesapla",
+        "kind": 2,
+        "importPath": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "description": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "peekOfCode": "def eğim_hesapla(x1, y1, x2, y2):\n    # İki nokta arasındaki eğimi hesapla\n    eğim = (y2 - y1) / (x2 - x1)\n    return eğim\n# Excel dosyasından veriyi oku\nveri = pd.read_excel(\"C:\\\\Users\\\\MasterChef\\\\Desktop\\\\data_37_38.xlsx\")\n# Sonuçları tutacak bir liste oluştur\nsonuçlar = []\n# Veri setindeki her satır için işlem yap\nfor index, row in veri.iterrows():",
+        "detail": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "documentation": {}
+    },
+    {
+        "label": "veri",
+        "kind": 5,
+        "importPath": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "description": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "peekOfCode": "veri = pd.read_excel(\"C:\\\\Users\\\\MasterChef\\\\Desktop\\\\data_37_38.xlsx\")\n# Sonuçları tutacak bir liste oluştur\nsonuçlar = []\n# Veri setindeki her satır için işlem yap\nfor index, row in veri.iterrows():\n    # İki noktanın koordinatlarını seç\n    x1, y1 = row['Column1'], row['Column2']\n    x2, y2 = row['Column3'], row['Column4']\n    # Sonraki iki noktanın koordinatlarını seç\n    x3, y3 = row['Column5'], row['Column6']",
+        "detail": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "documentation": {}
+    },
+    {
+        "label": "sonuçlar",
+        "kind": 5,
+        "importPath": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "description": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "peekOfCode": "sonuçlar = []\n# Veri setindeki her satır için işlem yap\nfor index, row in veri.iterrows():\n    # İki noktanın koordinatlarını seç\n    x1, y1 = row['Column1'], row['Column2']\n    x2, y2 = row['Column3'], row['Column4']\n    # Sonraki iki noktanın koordinatlarını seç\n    x3, y3 = row['Column5'], row['Column6']\n    x4, y4 = row['Column7'], row['Column8']\n    # Eğimleri hesapla",
+        "detail": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "documentation": {}
+    },
+    {
+        "label": "sonuçlar_df",
+        "kind": 5,
+        "importPath": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "description": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "peekOfCode": "sonuçlar_df = pd.DataFrame(sonuçlar)\n# Sonuçları Excel dosyasına yaz\nsonuçlar_df.to_excel(\"C:\\\\Users\\\\MasterChef\\\\Desktop\\\\sonuclar.xlsx\", index=False)\nprint(\"Sonuçlar başarıyla kaydedildi.\")",
+        "detail": "Jupyter.winter.kodlar_winter_açì_hesabì",
+        "documentation": {}
+    },
+    {
+        "label": "resize_and_save_images",
+        "kind": 2,
+        "importPath": "Jupyter Notebooks.PhD Code Implementation.resize-images",
+        "description": "Jupyter Notebooks.PhD Code Implementation.resize-images",
+        "peekOfCode": "def resize_and_save_images(input_dir, output_dir, target_width=512, target_height=256):\n    # Ensure the output directory exists\n    if not os.path.exists(output_dir):\n        os.makedirs(output_dir)\n    # Get a list of image filenames in the input directory\n    image_filenames = [filename for filename in os.listdir(input_dir) if filename.endswith('.png')]\n    print(image_filenames)\n    for image_filename in image_filenames:\n        try:\n            # Load the image",
+        "detail": "Jupyter Notebooks.PhD Code Implementation.resize-images",
+        "documentation": {}
+    },
+    {
+        "label": "bul",
+        "kind": 2,
+        "importPath": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "def bul(x1, y1, x2, y2, x5):\n    m = (y2 - y1) / (x2 - x1)\n    x, y = symbols('x y')\n    eq1 = Eq(y - y2 - (m * x - m * x2), 0)\n    eq2 = Eq(x - x5, 0)\n    solution = solve([eq1, eq2], [x, y])\n    x_value = solution[x]\n    y_value = solution[y]\n    y_value = round(y_value)\n    return y_value",
+        "detail": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "filename",
+        "kind": 5,
+        "importPath": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "filename = 'C:/Users/MasterChef/Desktop/data_47_48.xlsx'\ndata_47_48 = pd.read_excel(filename)\n# Y5_47_48_veri.xlsx dosyasını oku\nfilename1 = 'C:/Users/MasterChef/Desktop/Y5_47_48_veri.xlsx'\nY5_47_48 = pd.read_excel(filename1)\n# Boyutu al\nkk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']",
+        "detail": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "data_47_48",
+        "kind": 5,
+        "importPath": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "data_47_48 = pd.read_excel(filename)\n# Y5_47_48_veri.xlsx dosyasını oku\nfilename1 = 'C:/Users/MasterChef/Desktop/Y5_47_48_veri.xlsx'\nY5_47_48 = pd.read_excel(filename1)\n# Boyutu al\nkk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']\n    y1 = data_47_48.loc[i, 'Column2']",
+        "detail": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "filename1",
+        "kind": 5,
+        "importPath": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "filename1 = 'C:/Users/MasterChef/Desktop/Y5_47_48_veri.xlsx'\nY5_47_48 = pd.read_excel(filename1)\n# Boyutu al\nkk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']\n    y1 = data_47_48.loc[i, 'Column2']\n    x2 = data_47_48.loc[i, 'Column3']\n    y2 = data_47_48.loc[i, 'Column4']",
+        "detail": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "Y5_47_48",
+        "kind": 5,
+        "importPath": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "Y5_47_48 = pd.read_excel(filename1)\n# Boyutu al\nkk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']\n    y1 = data_47_48.loc[i, 'Column2']\n    x2 = data_47_48.loc[i, 'Column3']\n    y2 = data_47_48.loc[i, 'Column4']\n    x5 = data_47_48.loc[i, 'Column9']",
+        "detail": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "kk",
+        "kind": 5,
+        "importPath": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "description": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "peekOfCode": "kk = data_47_48.shape[0]\n# Veriyi işle\nfor i in range(kk):\n    x1 = data_47_48.loc[i, 'Column1']\n    y1 = data_47_48.loc[i, 'Column2']\n    x2 = data_47_48.loc[i, 'Column3']\n    y2 = data_47_48.loc[i, 'Column4']\n    x5 = data_47_48.loc[i, 'Column9']\n    y = bul(x1, y1, x2, y2, x5)\n    Y5_47_48.loc[i, 'Column2'] = y",
+        "detail": "Jupyter Notebooks.pellgregory.4.veriseti_bulma_kodlarì",
+        "documentation": {}
+    },
+    {
+        "label": "eğim_hesapla",
+        "kind": 2,
+        "importPath": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "description": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "peekOfCode": "def eğim_hesapla(x1, y1, x2, y2):\n    # İki nokta arasındaki eğimi hesapla\n    eğim = (y2 - y1) / (x2 - x1)\n    return eğim\n# Excel dosyasından veriyi oku\nveri = pd.read_excel(\"C:\\\\Users\\\\MasterChef\\\\Desktop\\\\data_37_38.xlsx\")\n# Sonuçları tutacak bir liste oluştur\nsonuçlar = []\n# Veri setindeki her satır için işlem yap\nfor index, row in veri.iterrows():",
+        "detail": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "documentation": {}
+    },
+    {
+        "label": "veri",
+        "kind": 5,
+        "importPath": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "description": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "peekOfCode": "veri = pd.read_excel(\"C:\\\\Users\\\\MasterChef\\\\Desktop\\\\data_37_38.xlsx\")\n# Sonuçları tutacak bir liste oluştur\nsonuçlar = []\n# Veri setindeki her satır için işlem yap\nfor index, row in veri.iterrows():\n    # İki noktanın koordinatlarını seç\n    x1, y1 = row['Column1'], row['Column2']\n    x2, y2 = row['Column3'], row['Column4']\n    # Sonraki iki noktanın koordinatlarını seç\n    x3, y3 = row['Column5'], row['Column6']",
+        "detail": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "documentation": {}
+    },
+    {
+        "label": "sonuçlar",
+        "kind": 5,
+        "importPath": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "description": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "peekOfCode": "sonuçlar = []\n# Veri setindeki her satır için işlem yap\nfor index, row in veri.iterrows():\n    # İki noktanın koordinatlarını seç\n    x1, y1 = row['Column1'], row['Column2']\n    x2, y2 = row['Column3'], row['Column4']\n    # Sonraki iki noktanın koordinatlarını seç\n    x3, y3 = row['Column5'], row['Column6']\n    x4, y4 = row['Column7'], row['Column8']\n    # Eğimleri hesapla",
+        "detail": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "documentation": {}
+    },
+    {
+        "label": "sonuçlar_df",
+        "kind": 5,
+        "importPath": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "description": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "peekOfCode": "sonuçlar_df = pd.DataFrame(sonuçlar)\n# Sonuçları Excel dosyasına yaz\nsonuçlar_df.to_excel(\"C:\\\\Users\\\\MasterChef\\\\Desktop\\\\sonuclar.xlsx\", index=False)\nprint(\"Sonuçlar başarıyla kaydedildi.\")",
+        "detail": "Jupyter Notebooks.winter.kodlar_winter_açì_hesabì",
+        "documentation": {}
+    },
+    {
+        "label": "DoubleConv",
+        "kind": 6,
+        "importPath": "model.unet_model",
+        "description": "model.unet_model",
+        "peekOfCode": "class DoubleConv(nn.Module):\n    def __init__(self, in_ch, out_ch):\n        super().__init__()\n        self.conv = nn.Sequential(\n            nn.Conv2d(in_ch, out_ch, 3, stride=1, padding=1),  #kernel size is 3\n            nn.ReLU(inplace=True),\n            nn.BatchNorm2d(out_ch),\n            nn.Conv2d(out_ch, out_ch, 3, stride=1, padding=1),\n            nn.ReLU(inplace=True),\n            nn.BatchNorm2d(out_ch),",
+        "detail": "model.unet_model",
+        "documentation": {}
+    },
+    {
+        "label": "DownBlock",
+        "kind": 6,
+        "importPath": "model.unet_model",
+        "description": "model.unet_model",
+        "peekOfCode": "class DownBlock(nn.Module):\n    def __init__(self, in_ch, out_ch, drop=0):\n        super().__init__()\n        self.mp = nn.MaxPool2d(2)\n        self.drop = nn.Dropout2d(p=drop) if drop != 0 else None\n        self.conv = DoubleConv(in_ch, out_ch)\n    def forward(self, x):\n        x = self.mp(x)\n        if self.drop != None:\n            x = self.drop(x)",
+        "detail": "model.unet_model",
+        "documentation": {}
+    },
+    {
+        "label": "UpBlock",
+        "kind": 6,
+        "importPath": "model.unet_model",
+        "description": "model.unet_model",
+        "peekOfCode": "class UpBlock(nn.Module):\n    def __init__(self, in_ch, out_ch, drop=0):\n        super().__init__()\n        self.up = nn.ConvTranspose2d(in_ch, in_ch // 2, 2, stride=2) #Here to kernel size of 2\n        self.drop = nn.Dropout2d(p=drop) if drop != 0 else None\n        self.conv = DoubleConv(in_ch, out_ch)\n    def forward(self, x, x_stored):\n        x = self.up(x)\n        x = torch.cat([x, x_stored], dim=1)\n        if self.drop != None:",
+        "detail": "model.unet_model",
+        "documentation": {}
+    },
+    {
+        "label": "UNet",
+        "kind": 6,
+        "importPath": "model.unet_model",
+        "description": "model.unet_model",
+        "peekOfCode": "class UNet(nn.Module):\n    def __init__(self, in_ch, out_ch, down_drop, up_drop, predict_gaussian=False):\n        super().__init__()\n        assert len(down_drop) == 4\n        assert len(up_drop) == 4\n        self.inconv = DoubleConv(in_ch, 64)\n        self.down1 = DownBlock(64, 128, down_drop[0])\n        self.down2 = DownBlock(128, 256, down_drop[1])\n        self.down3 = DownBlock(256, 512, down_drop[2])\n        self.down4 = DownBlock(512, 1024, down_drop[3])",
+        "detail": "model.unet_model",
+        "documentation": {}
+    },
+    {
+        "label": "ElasticTransform",
+        "kind": 6,
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "peekOfCode": "class ElasticTransform():\n    def __init__(self, sigma=8.0, alpha=15.0):\n        self.sigma = sigma\n        self.alpha = alpha\n    def get_coordinates(self, im):\n        dx = np.random.rand(*im.shape) * 2 - 1\n        dy = np.random.rand(*im.shape) * 2 - 1\n        dx = ndimage.gaussian_filter(dx, self.sigma, mode='constant', cval=0) * self.alpha\n        dy = ndimage.gaussian_filter(dy, self.sigma, mode='constant', cval=0) * self.alpha\n        x, y = np.meshgrid(np.arange(im.shape[1]), np.arange(im.shape[0]))",
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "AffineTransform",
+        "kind": 6,
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "peekOfCode": "class AffineTransform():\n    def __init__(self, angle, scales=None, tx=None, ty=None):\n        self.scales = scales\n        self.angle = angle\n        self.tx = tx\n        self.ty = ty\n        translations = [tx, ty]\n        for t in translations:\n            if t is not None and not (0.0 <= t <= 1.0):\n                raise ValueError(\"translation values should be between 0 and 1\")",
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "list_files",
+        "kind": 2,
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "peekOfCode": "def list_files(dir_path):\n    return sorted(list(dir_path.iterdir()))\n# NRI\ndef get_elastic_transform_coordinates(im, sigma=8.0, alpha=15.0, random_state=None):\n    if random_state is None:\n        random_state = np.random.RandomState(None)\n    dx = random_state.rand(*im.shape) * 2 - 1\n    dy = random_state.rand(*im.shape) * 2 - 1\n    dx = ndimage.gaussian_filter(dx, sigma, mode='constant', cval=0) * alpha\n    dy = ndimage.gaussian_filter(dy, sigma, mode='constant', cval=0) * alpha",
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_elastic_transform_coordinates",
+        "kind": 2,
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "peekOfCode": "def get_elastic_transform_coordinates(im, sigma=8.0, alpha=15.0, random_state=None):\n    if random_state is None:\n        random_state = np.random.RandomState(None)\n    dx = random_state.rand(*im.shape) * 2 - 1\n    dy = random_state.rand(*im.shape) * 2 - 1\n    dx = ndimage.gaussian_filter(dx, sigma, mode='constant', cval=0) * alpha\n    dy = ndimage.gaussian_filter(dy, sigma, mode='constant', cval=0) * alpha\n    x, y = np.meshgrid(np.arange(im.shape[0]), np.arange(im.shape[1]))\n    coordinates = np.reshape(y + dy, (-1, 1)), np.reshape(x + dx, (-1, 1))\n    return coordinates, dx, dy",
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "count_parameters",
+        "kind": 2,
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "peekOfCode": "def count_parameters(model):\n    params = [p.numel() for p in model.parameters() if p.requires_grad]\n    print(\"Including the bias terms for each layer, the total number of parameters being trained is:\")\n    for item in params:\n        print(f'{item:>6}')\n    print(f'______\\n{sum(params):>6}')\nclass ElasticTransform():\n    def __init__(self, sigma=8.0, alpha=15.0):\n        self.sigma = sigma\n        self.alpha = alpha",
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "ORIG_IMAGE_X",
+        "kind": 5,
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "peekOfCode": "ORIG_IMAGE_X = 1100\nORIG_IMAGE_Y = 600\nPIXELS_PER_MM = 6\nN_LANDMARKS = 5\ndef list_files(dir_path):\n    return sorted(list(dir_path.iterdir()))\n# NRI\ndef get_elastic_transform_coordinates(im, sigma=8.0, alpha=15.0, random_state=None):\n    if random_state is None:\n        random_state = np.random.RandomState(None)",
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "ORIG_IMAGE_Y",
+        "kind": 5,
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "peekOfCode": "ORIG_IMAGE_Y = 600\nPIXELS_PER_MM = 6\nN_LANDMARKS = 5\ndef list_files(dir_path):\n    return sorted(list(dir_path.iterdir()))\n# NRI\ndef get_elastic_transform_coordinates(im, sigma=8.0, alpha=15.0, random_state=None):\n    if random_state is None:\n        random_state = np.random.RandomState(None)\n    dx = random_state.rand(*im.shape) * 2 - 1",
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "PIXELS_PER_MM",
+        "kind": 5,
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "peekOfCode": "PIXELS_PER_MM = 6\nN_LANDMARKS = 5\ndef list_files(dir_path):\n    return sorted(list(dir_path.iterdir()))\n# NRI\ndef get_elastic_transform_coordinates(im, sigma=8.0, alpha=15.0, random_state=None):\n    if random_state is None:\n        random_state = np.random.RandomState(None)\n    dx = random_state.rand(*im.shape) * 2 - 1\n    dy = random_state.rand(*im.shape) * 2 - 1",
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "N_LANDMARKS",
+        "kind": 5,
+        "importPath": "utilities.common_utils",
+        "description": "utilities.common_utils",
+        "peekOfCode": "N_LANDMARKS = 5\ndef list_files(dir_path):\n    return sorted(list(dir_path.iterdir()))\n# NRI\ndef get_elastic_transform_coordinates(im, sigma=8.0, alpha=15.0, random_state=None):\n    if random_state is None:\n        random_state = np.random.RandomState(None)\n    dx = random_state.rand(*im.shape) * 2 - 1\n    dy = random_state.rand(*im.shape) * 2 - 1\n    dx = ndimage.gaussian_filter(dx, sigma, mode='constant', cval=0) * alpha",
+        "detail": "utilities.common_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_true_landmarks",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def get_true_landmarks(annotations_path, image_path):\n    ''' \n    Returns an array of true landmarks for an image, and return an array of the results\n    '''\n    image_id = image_path.stem     #The stem of the filename identified by the path (i.e. the filename without the final extension).\n    annots = (annotations_path / f'{image_id}.txt').read_text()\n    annots = annots.split('\\n')[:N_LANDMARKS]\n    annots = [l.split(',') for l in annots]\n    true_landmarks = [np.array([float(l[1]), float(l[0])]) for l in annots]  # Swap XY to YX order\n    return np.array(true_landmarks)",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "read_prediction_files_as_df",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def read_prediction_files_as_df(prediction_files):\n    ''' \n    Reads individual prediction files as dataframes and then concatenates them into a single dataframe \n    with all predictions for all images and samples.\n    '''\n    dataframes = []\n    for f in prediction_files:\n        dataframes.append(pd.read_csv(f))\n    df = pd.concat(dataframes, ignore_index=True)\n    df.sort_values(FILE_COL, inplace=True)",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_predictions_for_image",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def get_predictions_for_image(df, image_file, n_samples):\n    ''' \n    Extracts all of the landmark position and activations samples for the given image from the dataframe\n    and the returns them as numpy arrays.\n    '''\n    image_df = df.loc[df[FILE_COL] == image_file]\n    image_df.reset_index(drop=True, inplace=True)\n    computed_samples = image_df.shape[0]\n    n_samples = min(n_samples, computed_samples)\n    activation_samples = np.zeros((n_samples, N_LANDMARKS))",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_landmark_prediction_variance",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def get_landmark_prediction_variance(lm_samples):\n    n_samples, n_landmarks, _ = lm_samples.shape\n    landmark_mean = np.mean(lm_samples, axis=0)\n    distances = np.zeros((n_samples, n_landmarks))\n    for s in range(n_samples):\n        for lm in range(n_landmarks):\n            dist = np.linalg.norm(lm_samples[s, lm] - landmark_mean[lm])\n            distances[s, lm] = dist\n    return np.mean(distances, axis=0)\ndef get_predicted_landmarks_for_image(landmark_samples):",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_predicted_landmarks_for_image",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def get_predicted_landmarks_for_image(landmark_samples):\n    ''' \n        Returns the average predicted landmark positions in term of samples and their variance computed\n        as the mean distance between landmarks and the mean landmark.\n        Takes an array of dimension (n_samples, n_landmarks, 2).\n    '''\n    landmark_mean = np.mean(landmark_samples, axis=0)\n    landmark_var = get_landmark_prediction_variance(landmark_samples)\n    return landmark_mean, landmark_var / PIXELS_PER_MM\ndef get_predicted_activations_for_image(activation_samples):",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_predicted_activations_for_image",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def get_predicted_activations_for_image(activation_samples):\n    ''' Returns the average activation landmark positions and their variance in term of samples.\n        Takes an array of dimension (n_samples, n_landmarks).\n    '''\n    activation_mean = np.mean(activation_samples, axis=0)\n    activation_var = np.var(activation_samples, axis=0)\n    return activation_mean, activation_var\ndef radial_error_mm(true, pred):\n    ''' \n    Returns the radial error in mms for a single landmark.",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "radial_error_mm",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def radial_error_mm(true, pred):\n    ''' \n    Returns the radial error in mms for a single landmark.\n    The radial error is the distance between the desired point of impact and actual point of impact, \n    both points projected and measured on an imaginary plane drawn perpendicular to the flight path of the munition.\n    '''\n    return np.linalg.norm(pred / PIXELS_PER_MM - true / PIXELS_PER_MM)\ndef get_radial_errors_mm_for_image(true_landmarks, predicted_landmarks):\n    ''' \n        Returns an array containing the radial error for each landmark for the image.",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_radial_errors_mm_for_image",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def get_radial_errors_mm_for_image(true_landmarks, predicted_landmarks):\n    ''' \n        Returns an array containing the radial error for each landmark for the image.\n    '''\n    radial_errors = np.zeros(N_LANDMARKS)\n    for lm in range(N_LANDMARKS):\n        radial_errors[lm] = radial_error_mm(true_landmarks[lm], predicted_landmarks[lm])\n    return radial_errors\ndef get_radial_errors_mm_for_individual_landmarks(radial_errors):\n    '''",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_radial_errors_mm_for_individual_landmarks",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def get_radial_errors_mm_for_individual_landmarks(radial_errors):\n    '''\n        Returns an array containing the radial error for each landmark for the image.\n    '''\n    print('STATISCAL VALUES ON TEST1')\n    for lm in range(N_LANDMARKS):\n        sdr_lm = np.array([], dtype = np.float32)\n        for errors in np.array(radial_errors):\n            sdr_lm = np.append(sdr_lm, errors[lm])\n        # for result in np.array(lm):",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_accuracy_metrics",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def get_accuracy_metrics(radial_errors_mm_all):\n    '''\n    This function Computes the accuracy metrics from radial errors by getting the mean and standard deviation of the\n    results obtaine. This results then compaire to the actial values and printed out.\n    '''\n    # print(f\"Count of the frame { len(radial_errors_mm_all)}\" )\n    mre = radial_errors_mm_all.mean()\n    std = radial_errors_mm_all.std()\n    sdr_2 = (radial_errors_mm_all < 2.0).mean()\n    sdr_2_5 = (radial_errors_mm_all < 2.5).mean()",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "print_accuracy_metrics",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def print_accuracy_metrics(result):\n    '''\n    Success Detection Rate gives the percentage of predictions within that radius of the ground truth.\n    '''\n    print(f\"Mean Root Error (MRE): {result['mre']:{4}.{4}} mm, Standard Deviation (STD): {result['std']:{4}.{4}} mm\\\n           \\nSuccess Detection Rate\\\n           \\nSDR 2mm: {result['sdr_2']:{4}.{4}}\\\n           \\nSDR 2.5mm: {result['sdr_2_5']:{4}.{4}}\\\n           \\nSDR 3mm: {result['sdr_3']:{4}.{4}}\\\n           \\nSDR 4mm: {result['sdr_4']:{4}.{4}}\")",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "log_metrics",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def log_metrics(metrics, metrics_dir, n_samples):\n    ''' \n    Logs the computed metrics to a csv file in the metrics subdirectory of the log directory for the model.\n    '''\n    metrics['samples'] = n_samples\n    metrics_df = pd.DataFrame(data=metrics, index=[0])\n    metrics_df.to_csv(metrics_dir / f'{n_samples}.csv')\ndef get_test_predictions_df(model_log_dir):\n    \"\"\" \n    Load computed model predictions, this function simple reads all the prediction files and return a dataframe of all",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_test_predictions_df",
+        "kind": 2,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "def get_test_predictions_df(model_log_dir):\n    \"\"\" \n    Load computed model predictions, this function simple reads all the prediction files and return a dataframe of all\n    the predictions files.\n    \"\"\"\n    prediction_dir = model_log_dir / 'predictions'\n    prediction_files = list_files(prediction_dir)\n    predictions_df = read_prediction_files_as_df(prediction_files)\n    return predictions_df",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "FILE_COL",
+        "kind": 5,
+        "importPath": "utilities.eval_utils",
+        "description": "utilities.eval_utils",
+        "peekOfCode": "FILE_COL = 'file'\ndef read_prediction_files_as_df(prediction_files):\n    ''' \n    Reads individual prediction files as dataframes and then concatenates them into a single dataframe \n    with all predictions for all images and samples.\n    '''\n    dataframes = []\n    for f in prediction_files:\n        dataframes.append(pd.read_csv(f))\n    df = pd.concat(dataframes, ignore_index=True)",
+        "detail": "utilities.eval_utils",
+        "documentation": {}
+    },
+    {
+        "label": "ArrayToTensor",
+        "kind": 6,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "class ArrayToTensor(object):\n    def __call__(self, np_array):\n        return torch.from_numpy(np_array).float()\nclass LandmarkDataset(Dataset):\n    def __init__(self, image_fnames, annotations_path, gauss_sigma, gauss_amplitude,\n                 elastic_trans=None, affine_trans=None, horizontal_flip=False):\n        self.image_fnames = image_fnames\n        if annotations_path == '': annotations_path = None\n        self.annotations_path = annotations_path\n        self.gauss_sigma = gauss_sigma",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "LandmarkDataset",
+        "kind": 6,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "class LandmarkDataset(Dataset):\n    def __init__(self, image_fnames, annotations_path, gauss_sigma, gauss_amplitude,\n                 elastic_trans=None, affine_trans=None, horizontal_flip=False):\n        self.image_fnames = image_fnames\n        if annotations_path == '': annotations_path = None\n        self.annotations_path = annotations_path\n        self.gauss_sigma = gauss_sigma\n        self.gauss_amplitude = gauss_amplitude\n        self.elastic_trans = elastic_trans\n        self.affine_trans = affine_trans",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_annots_for_image",
+        "kind": 2,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "def get_annots_for_image(annotations_path, image_path, rescaled_image_size=None, orig_image_size=np.array([ORIG_IMAGE_X, ORIG_IMAGE_Y])):\n    '''\n    Gets all the annations of an image and return in a simple array format of [[x1,y1], [x2,y2], ...] \n    '''\n    image_id = image_path.stem\n    annots = (annotations_path / f'{image_id}.txt').read_text()\n    annots = annots.split('\\n')[:N_LANDMARKS]\n    annots = [l.split(',') for l in annots]\n    annots = [(float(l[0]), float(l[1])) for l in annots];\n    annots = np.array(annots)",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_true_heatmaps",
+        "kind": 2,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "def create_true_heatmaps(annots, image_size, amplitude):\n    heatmaps = np.zeros((annots.shape[0], image_size, image_size))\n    for i, landmark_pos in enumerate(annots):\n        try:\n            x, y = landmark_pos\n            heatmaps[i, y, x] = amplitude  # Swap WxH to HxW\n        except:\n            pass\n    return heatmaps\ndef reset_heatmap_maximum(heatmap, amplitude):",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "reset_heatmap_maximum",
+        "kind": 2,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "def reset_heatmap_maximum(heatmap, amplitude):\n    '''\n    Heatmap maximum value is not equal to the amplitude after the transformation.\n    We zero the heatmap and set it to the amplitude at the new maximum position.\n    '''\n    ind = np.unravel_index(np.argmax(heatmap, axis=None), heatmap.shape)\n    heatmap[:] = 0\n    heatmap[ind] = amplitude\n    return heatmap\nclass ArrayToTensor(object):",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_max_yx",
+        "kind": 2,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "def get_max_yx(tensor):\n    max_y, argmax_y = tensor.max(dim=0)\n    _, argmax_x = max_y.max(dim=0)\n    max_yx = (argmax_y[argmax_x.item()].item(), argmax_x.item())\n    return np.array(max_yx)\n'''\ndef np_max_yx(arr):\n    argmax_0 = np.argmax(arr, axis=0)\n    max_0 = arr[argmax_0, np.arange(arr.shape[1])]\n    argmax_1 = np.argmax(max_0)",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "np_max_yx",
+        "kind": 2,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "def np_max_yx(arr):\n    argmax_0 = np.argmax(arr, axis=0)\n    max_0 = arr[argmax_0, np.arange(arr.shape[1])]\n    argmax_1 = np.argmax(max_0)\n    max_yx_pos = np.array([argmax_0[argmax_1], argmax_1])\n    max_val = arr[max_yx_pos[0], max_yx_pos[1]]\n    return max_val, max_yx_pos\ndef get_max_heatmap_activation(tensor, gauss_sigma):\n    array = tensor.cpu().detach().numpy()\n    activations = ndimage.gaussian_filter(array, sigma=gauss_sigma, truncate=GAUSSIAN_TRUNCATE)",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_max_heatmap_activation",
+        "kind": 2,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "def get_max_heatmap_activation(tensor, gauss_sigma):\n    array = tensor.cpu().detach().numpy()\n    activations = ndimage.gaussian_filter(array, sigma=gauss_sigma, truncate=GAUSSIAN_TRUNCATE)\n    max_val, max_pos = np_max_yx(activations)\n    return max_val, max_pos\ndef radial_errors_calcalation(pred, targ, gauss_sigma, orig_image_x=ORIG_IMAGE_X, orig_image_y=ORIG_IMAGE_Y):\n    example_radial_errors = np.zeros(N_LANDMARKS)\n    heatmap_y, heatmap_x = pred.shape[1:]\n    for i in range(N_LANDMARKS):\n        max_pred_act, pred_yx = get_max_heatmap_activation(pred[i], gauss_sigma)",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "radial_errors_calcalation",
+        "kind": 2,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "def radial_errors_calcalation(pred, targ, gauss_sigma, orig_image_x=ORIG_IMAGE_X, orig_image_y=ORIG_IMAGE_Y):\n    example_radial_errors = np.zeros(N_LANDMARKS)\n    heatmap_y, heatmap_x = pred.shape[1:]\n    for i in range(N_LANDMARKS):\n        max_pred_act, pred_yx = get_max_heatmap_activation(pred[i], gauss_sigma)\n        _, true_yx = get_max_heatmap_activation(targ[i], gauss_sigma)\n        # Rescale to original resolution\n        rescale = np.array([ORIG_IMAGE_Y, ORIG_IMAGE_X]) / np.array([heatmap_y, heatmap_x])\n        pred_yx = np.around(pred_yx * rescale) / PIXELS_PER_MM\n        true_yx = np.around(true_yx * rescale) / PIXELS_PER_MM",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "radial_errors_batch",
+        "kind": 2,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "def radial_errors_batch(preds, targs, gauss_sigma):\n    assert (preds.shape[0] == targs.shape[0])\n    batch_size = preds.shape[0]\n    batch_radial_errors = np.zeros((batch_size, N_LANDMARKS))\n    for i in range(batch_size):\n        batch_radial_errors[i] = radial_errors_calcalation(preds[i], targs[i], gauss_sigma)\n    return batch_radial_errors\ndef aug_and_save(img, img_name, label, aug_list, base_path):\n    kp = [list_to_kp(label)]\n    img = shrink.augment_image(img)",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "aug_and_save",
+        "kind": 2,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "def aug_and_save(img, img_name, label, aug_list, base_path):\n    kp = [list_to_kp(label)]\n    img = shrink.augment_image(img)\n    kp = shrink.augment_keypoints(kp)\n    img_save_name = base_path + \"/\" + img_name + \"_aug{}\".format(0)\n    io.imsave(img_save_name + \".bmp\", img)\n    with open(img_save_name + \".txt\", \"w\") as lf:\n            stringified = [str(tup) for tup in kp_to_list(kp[0].keypoints)]\n            stringified = [s.replace(\"(\", \"\").replace(\")\",\"\") for s in stringified]\n            lf.write(\"\\n\".join(stringified))",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "GAUSSIAN_TRUNCATE",
+        "kind": 5,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "GAUSSIAN_TRUNCATE = 1.0\nN_LANDMARKS = 5\ndef get_annots_for_image(annotations_path, image_path, rescaled_image_size=None, orig_image_size=np.array([ORIG_IMAGE_X, ORIG_IMAGE_Y])):\n    '''\n    Gets all the annations of an image and return in a simple array format of [[x1,y1], [x2,y2], ...] \n    '''\n    image_id = image_path.stem\n    annots = (annotations_path / f'{image_id}.txt').read_text()\n    annots = annots.split('\\n')[:N_LANDMARKS]\n    annots = [l.split(',') for l in annots]",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "N_LANDMARKS",
+        "kind": 5,
+        "importPath": "utilities.landmark_utils",
+        "description": "utilities.landmark_utils",
+        "peekOfCode": "N_LANDMARKS = 5\ndef get_annots_for_image(annotations_path, image_path, rescaled_image_size=None, orig_image_size=np.array([ORIG_IMAGE_X, ORIG_IMAGE_Y])):\n    '''\n    Gets all the annations of an image and return in a simple array format of [[x1,y1], [x2,y2], ...] \n    '''\n    image_id = image_path.stem\n    annots = (annotations_path / f'{image_id}.txt').read_text()\n    annots = annots.split('\\n')[:N_LANDMARKS]\n    annots = [l.split(',') for l in annots]\n    annots = [(float(l[0]), float(l[1])) for l in annots];",
+        "detail": "utilities.landmark_utils",
+        "documentation": {}
+    },
+    {
+        "label": "draw_outline",
+        "kind": 2,
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "peekOfCode": "def draw_outline(o, lw):\n    o.set_path_effects([patheffects.Stroke(linewidth=lw, foreground='black'), patheffects.Normal()])\ndef draw_text(ax, pos, label, fontsize, color='#00CC00', outline=2):\n    text = ax.text(*pos, label, verticalalignment='top', color=color, fontsize=fontsize)\n    draw_outline(text, outline)\ndef denorm(tensor_im):\n    tensor_im = tensor_im / 2.0 + 0.5\n    im = tensor_im.numpy()\n    im = np.squeeze(im)\n    return im",
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "draw_text",
+        "kind": 2,
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "peekOfCode": "def draw_text(ax, pos, label, fontsize, color='#00CC00', outline=2):\n    text = ax.text(*pos, label, verticalalignment='top', color=color, fontsize=fontsize)\n    draw_outline(text, outline)\ndef denorm(tensor_im):\n    tensor_im = tensor_im / 2.0 + 0.5\n    im = tensor_im.numpy()\n    im = np.squeeze(im)\n    return im\ndef plot_imgs(imgs, labels=None):\n    \"\"\" ",
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "denorm",
+        "kind": 2,
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "peekOfCode": "def denorm(tensor_im):\n    tensor_im = tensor_im / 2.0 + 0.5\n    im = tensor_im.numpy()\n    im = np.squeeze(im)\n    return im\ndef plot_imgs(imgs, labels=None):\n    \"\"\" \n    Plots tensor images with annotations.\n    \"\"\"\n    # Draw skull with landmarks",
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "plot_imgs",
+        "kind": 2,
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "peekOfCode": "def plot_imgs(imgs, labels=None):\n    \"\"\" \n    Plots tensor images with annotations.\n    \"\"\"\n    # Draw skull with landmarks\n    fig, axes = plt.subplots(6, len(imgs) // 6, figsize=(30, 20))\n    for i, ax in enumerate(axes.flat):\n        if type(imgs[i]) is torch.Tensor:\n            imgs[i] = denorm(imgs[i])\n        ax.imshow(np.squeeze(imgs[i]), cmap='gray')",
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "draw_annot",
+        "kind": 2,
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "peekOfCode": "def draw_annot(ax, pos, label, radius=40, fontsize=18, color='red', marker='x', alpha=1.0):\n    if marker is not None:\n        ax.scatter(pos[0], pos[1], s=radius, c=color, marker=marker, alpha=alpha)\n    if label is not None:\n        draw_text(ax, pos, label, fontsize, color=color)\ndef plot_img_with_heatmaps(img, heatmaps, gaussian_sigma):\n    \"\"\" \n    Plots tensor images with annotations.\n    \"\"\"\n    # Draw skull with landmarks",
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "plot_img_with_heatmaps",
+        "kind": 2,
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "peekOfCode": "def plot_img_with_heatmaps(img, heatmaps, gaussian_sigma):\n    \"\"\" \n    Plots tensor images with annotations.\n    \"\"\"\n    # Draw skull with landmarks\n    skull_fig, ax = plt.subplots(1, 1, figsize=(8, 8), frameon=False)\n    ax.set_axis_off()\n    if type(img) is torch.Tensor:\n        img = denorm(img)\n    ax.imshow(img, cmap='gray')",
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "plot_training_result",
+        "kind": 2,
+        "importPath": "utilities.plotting",
+        "description": "utilities.plotting",
+        "peekOfCode": "def plot_training_result(trained_losses, trained_mre, trained_sdr_4mm):\n    plt.plot(trained_losses, label='Train loss')\n    plt.plot(trained_mre, label='Train Mean Root Error')\n    plt.plot(trained_sdr_4mm, label='Train Success Detection Rate')\n    plt.title('Loss at the end of each epoch')\n    plt.show();",
+        "detail": "utilities.plotting",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "parser = argparse.ArgumentParser('')\nparser.add_argument('--MODE', type=str, required=True, choices=['ensemble'], help='Evaluation mode.')\nparser.add_argument('--DATA_SPLIT', type=str, default='test', choices=['train', 'test'], help='Which data split to evaluate on.')\nparser.add_argument('--LOG_PATH', type=str, default='logs', help='Path to model logs.')\nparser.add_argument('--SAMPLES', type=int, default=15, help='Number of MC samples to use for prediction.')\nparser.add_argument('--MODEL_NAME', type=str, required=True, help='Name of the evaluated model(s).')\nparser.add_argument('--ANNOT_PATH', type=str, default='data/dataset/resized/annotations/37-38-PELLGREGORY/test', help='Path to annotation data.')\nparser.add_argument('--IMAGES_PATH', type=str, default='data/dataset/resized/37-38-PELLGREGORY', help='Path to image data.')\nparser.add_argument('--IMAGE_SIZE', type=int, default=256, help='Size the test images will be rescaled to before being passed to the model.')\nargs = parser.parse_args()",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "args = parser.parse_args()\n# data/dataset/resized/annotations/37-38-PELLGREGORY/test/491-k-20.txt\nargs.LOG_PATH = Path(args.LOG_PATH)\nargs.ANNOT_PATH = Path(args.ANNOT_PATH)\n# Get test files\ntest_dir = Path(args.IMAGES_PATH)/f'{args.DATA_SPLIT}'\ntest_files = list_files(test_dir)\nn_test = len(test_files)\nprint(f'Evaluating performance metrics for model {args.MODEL_NAME}')\nprint(f'Split: {args.DATA_SPLIT}, no. images: {n_test}')",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "args.LOG_PATH",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "args.LOG_PATH = Path(args.LOG_PATH)\nargs.ANNOT_PATH = Path(args.ANNOT_PATH)\n# Get test files\ntest_dir = Path(args.IMAGES_PATH)/f'{args.DATA_SPLIT}'\ntest_files = list_files(test_dir)\nn_test = len(test_files)\nprint(f'Evaluating performance metrics for model {args.MODEL_NAME}')\nprint(f'Split: {args.DATA_SPLIT}, no. images: {n_test}')\n# Compute true landmarks\ntrue_landmarks_dict = OrderedDict()",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "args.ANNOT_PATH",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "args.ANNOT_PATH = Path(args.ANNOT_PATH)\n# Get test files\ntest_dir = Path(args.IMAGES_PATH)/f'{args.DATA_SPLIT}'\ntest_files = list_files(test_dir)\nn_test = len(test_files)\nprint(f'Evaluating performance metrics for model {args.MODEL_NAME}')\nprint(f'Split: {args.DATA_SPLIT}, no. images: {n_test}')\n# Compute true landmarks\ntrue_landmarks_dict = OrderedDict()\nfor i, img_path in enumerate(test_files):",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "test_dir",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "test_dir = Path(args.IMAGES_PATH)/f'{args.DATA_SPLIT}'\ntest_files = list_files(test_dir)\nn_test = len(test_files)\nprint(f'Evaluating performance metrics for model {args.MODEL_NAME}')\nprint(f'Split: {args.DATA_SPLIT}, no. images: {n_test}')\n# Compute true landmarks\ntrue_landmarks_dict = OrderedDict()\nfor i, img_path in enumerate(test_files):\n    true_landmarks_dict[img_path.name] = get_true_landmarks(args.ANNOT_PATH, img_path)\n# Load pre-generated model predictions from csvs",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "test_files",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "test_files = list_files(test_dir)\nn_test = len(test_files)\nprint(f'Evaluating performance metrics for model {args.MODEL_NAME}')\nprint(f'Split: {args.DATA_SPLIT}, no. images: {n_test}')\n# Compute true landmarks\ntrue_landmarks_dict = OrderedDict()\nfor i, img_path in enumerate(test_files):\n    true_landmarks_dict[img_path.name] = get_true_landmarks(args.ANNOT_PATH, img_path)\n# Load pre-generated model predictions from csvs\nmodel_log_dir = args.LOG_PATH/f'{args.DATA_SPLIT}/{args.MODE}/{args.MODEL_NAME}/predictions'",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "n_test",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "n_test = len(test_files)\nprint(f'Evaluating performance metrics for model {args.MODEL_NAME}')\nprint(f'Split: {args.DATA_SPLIT}, no. images: {n_test}')\n# Compute true landmarks\ntrue_landmarks_dict = OrderedDict()\nfor i, img_path in enumerate(test_files):\n    true_landmarks_dict[img_path.name] = get_true_landmarks(args.ANNOT_PATH, img_path)\n# Load pre-generated model predictions from csvs\nmodel_log_dir = args.LOG_PATH/f'{args.DATA_SPLIT}/{args.MODE}/{args.MODEL_NAME}/predictions'\npredictions_df = read_prediction_files_as_df(list_files(model_log_dir))",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "true_landmarks_dict",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "true_landmarks_dict = OrderedDict()\nfor i, img_path in enumerate(test_files):\n    true_landmarks_dict[img_path.name] = get_true_landmarks(args.ANNOT_PATH, img_path)\n# Load pre-generated model predictions from csvs\nmodel_log_dir = args.LOG_PATH/f'{args.DATA_SPLIT}/{args.MODE}/{args.MODEL_NAME}/predictions'\npredictions_df = read_prediction_files_as_df(list_files(model_log_dir))\n# Compute metrics\nradial_errors_all = np.zeros((len(test_files), N_LANDMARKS))\nfor i, image_file in enumerate(test_files):\n    # Compute the statistics across all samples for the image",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "model_log_dir",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "model_log_dir = args.LOG_PATH/f'{args.DATA_SPLIT}/{args.MODE}/{args.MODEL_NAME}/predictions'\npredictions_df = read_prediction_files_as_df(list_files(model_log_dir))\n# Compute metrics\nradial_errors_all = np.zeros((len(test_files), N_LANDMARKS))\nfor i, image_file in enumerate(test_files):\n    # Compute the statistics across all samples for the image\n    landmark_samples, activation_samples = get_predictions_for_image(predictions_df, image_file.name, args.SAMPLES)\n    predicted_landmarks_mean, predicted_landmarks_var = get_predicted_landmarks_for_image(landmark_samples)\n    # print( predicted_landmarks_mean, predicted_landmarks_var)\n    activation_mean, activation_var = get_predicted_activations_for_image(activation_samples)",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "predictions_df",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "predictions_df = read_prediction_files_as_df(list_files(model_log_dir))\n# Compute metrics\nradial_errors_all = np.zeros((len(test_files), N_LANDMARKS))\nfor i, image_file in enumerate(test_files):\n    # Compute the statistics across all samples for the image\n    landmark_samples, activation_samples = get_predictions_for_image(predictions_df, image_file.name, args.SAMPLES)\n    predicted_landmarks_mean, predicted_landmarks_var = get_predicted_landmarks_for_image(landmark_samples)\n    # print( predicted_landmarks_mean, predicted_landmarks_var)\n    activation_mean, activation_var = get_predicted_activations_for_image(activation_samples)\n    # Compute radial errors",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "radial_errors_all",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "radial_errors_all = np.zeros((len(test_files), N_LANDMARKS))\nfor i, image_file in enumerate(test_files):\n    # Compute the statistics across all samples for the image\n    landmark_samples, activation_samples = get_predictions_for_image(predictions_df, image_file.name, args.SAMPLES)\n    predicted_landmarks_mean, predicted_landmarks_var = get_predicted_landmarks_for_image(landmark_samples)\n    # print( predicted_landmarks_mean, predicted_landmarks_var)\n    activation_mean, activation_var = get_predicted_activations_for_image(activation_samples)\n    # Compute radial errors\n    true_landmarks = true_landmarks_dict[image_file.name]\n    radial_errors_all[i] = get_radial_errors_mm_for_image(true_landmarks, predicted_landmarks_mean)",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "image_file",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "image_file = test_files[10]\n# print(image_file)\n# Compute the statistics across all samples for the image\nlandmark_samples, activation_samples = get_predictions_for_image(predictions_df, image_file.name, args.SAMPLES)\npredicted_landmarks_mean, predicted_landmarks_var = get_predicted_landmarks_for_image(landmark_samples)\nactivation_mean, activation_var = get_predicted_activations_for_image(activation_samples)\n# for lm in range(len(true_landmarks)):\n#     # Compute radial errors\n#     true_landmarks = true_landmarks_dict[image_file.name]\n#     radial_errors_all = get_radial_errors_mm_for_image(true_landmarks, predicted_landmarks_mean)",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "metrics",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "metrics = get_accuracy_metrics(radial_errors_all)\nprint_accuracy_metrics(metrics)\nprint('======================================')\nprint(f'Accuracy metrics for  model: {args.MODEL_NAME}, test split: {args.DATA_SPLIT}, mode: {args.MODE}, samples: {args.SAMPLES}')",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "get_predicted_landmarks",
+        "kind": 2,
+        "importPath": "generate_predictions",
+        "description": "generate_predictions",
+        "peekOfCode": "def get_predicted_landmarks(pred_heatmaps, gauss_sigma):\n    n_landmarks = pred_heatmaps.shape[0]\n    heatmap_y, heatmap_x = pred_heatmaps.shape[1:]\n    pred_landmarks = np.zeros((n_landmarks, 2))\n    max_activations = np.zeros(n_landmarks)\n    for i in range(n_landmarks):\n        max_activation, pred_yx = get_max_heatmap_activation(pred_heatmaps[i], gauss_sigma)\n        rescale = np.array([ORIG_IMAGE_Y, ORIG_IMAGE_X]) / np.array([heatmap_y, heatmap_x])\n        pred_yx = np.around(pred_yx * rescale)\n        pred_landmarks[i] = pred_yx",
+        "detail": "generate_predictions",
+        "documentation": {}
+    },
+    {
+        "label": "load_net",
+        "kind": 2,
+        "importPath": "generate_predictions",
+        "description": "generate_predictions",
+        "peekOfCode": "def load_net(path):\n    net = torch.load(path, map_location='cpu')\n    net.to(device)\n    return net\ndef enable_test_time_dropout(m):\n    if type(m) == nn.Dropout2d:\n        m.train()\ndef predict(model_path, test_time_dropout=False):\n    # Data frame\n    columns = ['file'] + [f'{i}_act' for i in range(N_LANDMARKS)] + \\",
+        "detail": "generate_predictions",
+        "documentation": {}
+    },
+    {
+        "label": "enable_test_time_dropout",
+        "kind": 2,
+        "importPath": "generate_predictions",
+        "description": "generate_predictions",
+        "peekOfCode": "def enable_test_time_dropout(m):\n    if type(m) == nn.Dropout2d:\n        m.train()\ndef predict(model_path, test_time_dropout=False):\n    # Data frame\n    columns = ['file'] + [f'{i}_act' for i in range(N_LANDMARKS)] + \\\n              [f'{i}_y' for i in range(N_LANDMARKS)] + \\\n              [f'{i}_x' for i in range(N_LANDMARKS)]\n    index = np.arange(n_eval_images)\n    df = pd.DataFrame(columns=columns, index=index)",
+        "detail": "generate_predictions",
+        "documentation": {}
+    },
+    {
+        "label": "predict",
+        "kind": 2,
+        "importPath": "generate_predictions",
+        "description": "generate_predictions",
+        "peekOfCode": "def predict(model_path, test_time_dropout=False):\n    # Data frame\n    columns = ['file'] + [f'{i}_act' for i in range(N_LANDMARKS)] + \\\n              [f'{i}_y' for i in range(N_LANDMARKS)] + \\\n              [f'{i}_x' for i in range(N_LANDMARKS)]\n    index = np.arange(n_eval_images)\n    df = pd.DataFrame(columns=columns, index=index)\n    # Model\n    net = load_net(model_path)\n    n_processed = 0",
+        "detail": "generate_predictions",
+        "documentation": {}
+    },
+    {
+        "label": "device",
+        "kind": 5,
+        "importPath": "generate_predictions",
+        "description": "generate_predictions",
+        "peekOfCode": "device = 'cpu'\nparser = argparse.ArgumentParser('')\nparser.add_argument('--MODE', required=True, type=str, choices=['ensemble'], help='Evaluation mode.')\nparser.add_argument('--MODEL_PATH', required=True, type=str, help='Path to the evaluated model(s).')\nparser.add_argument('--DATA_SPLIT', type=str, choices=['train, test'], default='test', help='Which data split to evaluate on.')\nparser.add_argument('--LOG_PATH', type=str, default='logs', help='Path to model(s).')\nparser.add_argument('--SAMPLES', type=int, default=5, help='Number of MC samples to use for prediction.')\nparser.add_argument('--IMAGES_PATH', type=str, default='./data/dataset/resized/37-38-PELLGREGORY', help='Path to image data.')\nparser.add_argument('--ANNOT_PATH', type=str, help='Path to annotation data.')\nparser.add_argument('--IMAGE_SIZE', type=int, default=256, help='Size the test images will be rescaled to before being passed to the model.')",
+        "detail": "generate_predictions",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "generate_predictions",
+        "description": "generate_predictions",
+        "peekOfCode": "parser = argparse.ArgumentParser('')\nparser.add_argument('--MODE', required=True, type=str, choices=['ensemble'], help='Evaluation mode.')\nparser.add_argument('--MODEL_PATH', required=True, type=str, help='Path to the evaluated model(s).')\nparser.add_argument('--DATA_SPLIT', type=str, choices=['train, test'], default='test', help='Which data split to evaluate on.')\nparser.add_argument('--LOG_PATH', type=str, default='logs', help='Path to model(s).')\nparser.add_argument('--SAMPLES', type=int, default=5, help='Number of MC samples to use for prediction.')\nparser.add_argument('--IMAGES_PATH', type=str, default='./data/dataset/resized/37-38-PELLGREGORY', help='Path to image data.')\nparser.add_argument('--ANNOT_PATH', type=str, help='Path to annotation data.')\nparser.add_argument('--IMAGE_SIZE', type=int, default=256, help='Size the test images will be rescaled to before being passed to the model.')\nparser.add_argument('--GAUSS_SIGMA', type=float, default=5, help='Sigma of the Gaussian kernel used to generate ground truth heatmaps for the landmarks.')",
+        "detail": "generate_predictions",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "generate_predictions",
+        "description": "generate_predictions",
+        "peekOfCode": "args = parser.parse_args()\ndef get_predicted_landmarks(pred_heatmaps, gauss_sigma):\n    n_landmarks = pred_heatmaps.shape[0]\n    heatmap_y, heatmap_x = pred_heatmaps.shape[1:]\n    pred_landmarks = np.zeros((n_landmarks, 2))\n    max_activations = np.zeros(n_landmarks)\n    for i in range(n_landmarks):\n        max_activation, pred_yx = get_max_heatmap_activation(pred_heatmaps[i], gauss_sigma)\n        rescale = np.array([ORIG_IMAGE_Y, ORIG_IMAGE_X]) / np.array([heatmap_y, heatmap_x])\n        pred_yx = np.around(pred_yx * rescale)",
+        "detail": "generate_predictions",
+        "documentation": {}
+    },
+    {
+        "label": "merge",
+        "kind": 2,
+        "importPath": "plot_test_images",
+        "description": "plot_test_images",
+        "peekOfCode": "def merge(list1, list2):\n    merged_list = [tuple([int(float(list1[i])), int(float(list2[i]))]) for i in range(0, len(list1))]\n    return merged_list\n# import sample coordinates from text as tuples\ndef extract_labels_from_txt(path):\n    with open(path, \"r\") as f:\n        # only first 19 are actual coords in dataset label files\n        coords_raw = f.readlines()[:19]\n        coords_raw = [tuple([int(float(s)) for s in t.split(\",\")]) for t in coords_raw]\n        return coords_raw",
+        "detail": "plot_test_images",
+        "documentation": {}
+    },
+    {
+        "label": "extract_labels_from_txt",
+        "kind": 2,
+        "importPath": "plot_test_images",
+        "description": "plot_test_images",
+        "peekOfCode": "def extract_labels_from_txt(path):\n    with open(path, \"r\") as f:\n        # only first 19 are actual coords in dataset label files\n        coords_raw = f.readlines()[:19]\n        coords_raw = [tuple([int(float(s)) for s in t.split(\",\")]) for t in coords_raw]\n        return coords_raw\ndef extract_cordinate_from_cvs(path):\n    with open(path) as csvfile:\n        readCSV = csv.reader(csvfile, delimiter=',')\n        x_cordinates = []",
+        "detail": "plot_test_images",
+        "documentation": {}
+    },
+    {
+        "label": "extract_cordinate_from_cvs",
+        "kind": 2,
+        "importPath": "plot_test_images",
+        "description": "plot_test_images",
+        "peekOfCode": "def extract_cordinate_from_cvs(path):\n    with open(path) as csvfile:\n        readCSV = csv.reader(csvfile, delimiter=',')\n        x_cordinates = []\n        y_cordinates = []\n        index = 0\n        for row in readCSV:\n            if (index == 1):\n                y_cords = row[21:40]\n                x_cords = row[40:]",
+        "detail": "plot_test_images",
+        "documentation": {}
+    },
+    {
+        "label": "print_image",
+        "kind": 2,
+        "importPath": "plot_test_images",
+        "description": "plot_test_images",
+        "peekOfCode": "def print_image(img, labels):\n    print(img.shape)\n    plt.rcParams[\"figure.figsize\"] = [32, 18]\n    fig = plt.figure()\n    ax1 = fig.add_subplot(2, 2, 1)\n    ax2 = fig.add_subplot(2, 1, 1)\n    ax1.imshow(img, cmap=\"gray\")\n    # also plot resized image for later\n    orig_y, orig_x = img.shape[:2]\n    SCALE = 15",
+        "detail": "plot_test_images",
+        "documentation": {}
+    },
+    {
+        "label": "display_image_and_cord",
+        "kind": 2,
+        "importPath": "plot_test_images",
+        "description": "plot_test_images",
+        "peekOfCode": "def display_image_and_cord(image_number, img_path, cord_path):\n    data = []\n    target = []\n    for i, fi in enumerate(os.listdir(img_path)):\n        if i < image_number:\n            loop_img = io.imread(img_path + fi, as_gray=True)\n            lf = fi[:-4] + \".txt\"\n            loop_labels = extract_labels_from_txt(cord_path + lf)\n            loop_labels = (np.array(loop_labels))\n            print(loop_img)",
+        "detail": "plot_test_images",
+        "documentation": {}
+    },
+    {
+        "label": "SAMPLE_PATH",
+        "kind": 5,
+        "importPath": "plot_test_images",
+        "description": "plot_test_images",
+        "peekOfCode": "SAMPLE_PATH = \"data/images/128/test1/151.bmp\"\nTXT_PATH = \"logs/test1/ensemble/Ensemble/predictions/1.csv\"\n# import sample image\nimg = io.imread(SAMPLE_PATH, as_gray=True)\nprint(img.shape)\nimage_label = extract_cordinate_from_cvs(TXT_PATH)\n# plot_imgs(img)",
+        "detail": "plot_test_images",
+        "documentation": {}
+    },
+    {
+        "label": "TXT_PATH",
+        "kind": 5,
+        "importPath": "plot_test_images",
+        "description": "plot_test_images",
+        "peekOfCode": "TXT_PATH = \"logs/test1/ensemble/Ensemble/predictions/1.csv\"\n# import sample image\nimg = io.imread(SAMPLE_PATH, as_gray=True)\nprint(img.shape)\nimage_label = extract_cordinate_from_cvs(TXT_PATH)\n# plot_imgs(img)",
+        "detail": "plot_test_images",
+        "documentation": {}
+    },
+    {
+        "label": "img",
+        "kind": 5,
+        "importPath": "plot_test_images",
+        "description": "plot_test_images",
+        "peekOfCode": "img = io.imread(SAMPLE_PATH, as_gray=True)\nprint(img.shape)\nimage_label = extract_cordinate_from_cvs(TXT_PATH)\n# plot_imgs(img)",
+        "detail": "plot_test_images",
+        "documentation": {}
+    },
+    {
+        "label": "image_label",
+        "kind": 5,
+        "importPath": "plot_test_images",
+        "description": "plot_test_images",
+        "peekOfCode": "image_label = extract_cordinate_from_cvs(TXT_PATH)\n# plot_imgs(img)",
+        "detail": "plot_test_images",
+        "documentation": {}
+    },
+    {
+        "label": "train",
+        "kind": 2,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "def train():\n    trained_examples = 0\n    train_loss, train_mre, train_sdr_2mm,train_sdr_2_5mm,train_sdr_3mm,train_sdr_4mm = 0, 0, 0, 0, 0, 0\n  #  print(train_dl)    \n    '''We train the model and continue with the extraction of necessary information'''\n    net.train() \n    for imgs, true_points, _ in train_dl:\n        imgs = imgs.to(device)\n        true_points = true_points.to(device)\n        optimizer.zero_grad()",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "validate",
+        "kind": 2,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "def validate():\n    val_loss, val_mre, val_sdr_2mm, val_sdr_2_5mm, val_sdr_3mm, val_sdr_4mm = 0, 0, 0, 0, 0, 0\n    val_examples = 0\n    net.eval()\n    with torch.no_grad():\n        for imgs, true_points, _ in valid_dl:\n            imgs = imgs.to(device)\n            true_points = true_points.to(device)\n            pred_heatmaps = net(imgs)\n            loss = criterion(pred_heatmaps, true_points)",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "ORIG_IMAGE_SIZE",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "ORIG_IMAGE_SIZE = np.array([ORIG_IMAGE_X, ORIG_IMAGE_Y])  # WxH\nrandom_id = int(random.uniform(0, 99999999))\nparser = argparse.ArgumentParser()\nparser.add_argument('--DATA_PATH', type=str, default='./data', help='Define the root path to the dataset.')\nparser.add_argument('--MODEL_PATH', type=str, default='./trained', help='Path where the model checkpoints will be saved after it has been trained.')\nparser.add_argument('--MODEL_NAME', type=str, default=f'model_{random_id}')\nparser.add_argument('--EXPERIMENT_NAME', type=str, default=f'exp_{random_id}')\nparser.add_argument('--MODEL', type=str, default='unet')\nparser.add_argument('--FILTERS', type=lambda layers: [int(layer) for layer in layers.split(',')], default='64,128,256,512,1024')\nparser.add_argument('--DOWN_DROP', type=lambda layers: [float(layer) for layer in layers.split(',')], default='0.4,0.4,0.4,0.4')",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "random_id",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "random_id = int(random.uniform(0, 99999999))\nparser = argparse.ArgumentParser()\nparser.add_argument('--DATA_PATH', type=str, default='./data', help='Define the root path to the dataset.')\nparser.add_argument('--MODEL_PATH', type=str, default='./trained', help='Path where the model checkpoints will be saved after it has been trained.')\nparser.add_argument('--MODEL_NAME', type=str, default=f'model_{random_id}')\nparser.add_argument('--EXPERIMENT_NAME', type=str, default=f'exp_{random_id}')\nparser.add_argument('--MODEL', type=str, default='unet')\nparser.add_argument('--FILTERS', type=lambda layers: [int(layer) for layer in layers.split(',')], default='64,128,256,512,1024')\nparser.add_argument('--DOWN_DROP', type=lambda layers: [float(layer) for layer in layers.split(',')], default='0.4,0.4,0.4,0.4')\nparser.add_argument('--UP_DROP', type=lambda layers: [float(layer) for layer in layers.split(',')], default='0.4,0.4,0.4,0.4')",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "parser = argparse.ArgumentParser()\nparser.add_argument('--DATA_PATH', type=str, default='./data', help='Define the root path to the dataset.')\nparser.add_argument('--MODEL_PATH', type=str, default='./trained', help='Path where the model checkpoints will be saved after it has been trained.')\nparser.add_argument('--MODEL_NAME', type=str, default=f'model_{random_id}')\nparser.add_argument('--EXPERIMENT_NAME', type=str, default=f'exp_{random_id}')\nparser.add_argument('--MODEL', type=str, default='unet')\nparser.add_argument('--FILTERS', type=lambda layers: [int(layer) for layer in layers.split(',')], default='64,128,256,512,1024')\nparser.add_argument('--DOWN_DROP', type=lambda layers: [float(layer) for layer in layers.split(',')], default='0.4,0.4,0.4,0.4')\nparser.add_argument('--UP_DROP', type=lambda layers: [float(layer) for layer in layers.split(',')], default='0.4,0.4,0.4,0.4')\nparser.add_argument('--BATCH_SIZE', type=int, default=8)",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "args = parser.parse_args()\nprint(f'Training model {args.MODEL_NAME}')\n# Data paths\npath = Path(args.DATA_PATH)\nannotations_path = path / f'dataset/resized/annotations/37-38-PELLGREGORY/train'\nmodel_path = Path(args.MODEL_PATH) if args.MODEL_PATH is not None else path / 'models'\nmodel_path.mkdir(parents=True, exist_ok=True)\ntrain_path = path / f'dataset/resized/37-38-PELLGREGORY/train'\n# Datasets, DataLoaders\nfnames = list_files(train_path)",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "path = Path(args.DATA_PATH)\nannotations_path = path / f'dataset/resized/annotations/37-38-PELLGREGORY/train'\nmodel_path = Path(args.MODEL_PATH) if args.MODEL_PATH is not None else path / 'models'\nmodel_path.mkdir(parents=True, exist_ok=True)\ntrain_path = path / f'dataset/resized/37-38-PELLGREGORY/train'\n# Datasets, DataLoaders\nfnames = list_files(train_path)\nn_valid = int(args.VALID_RATIO * len(fnames))\ntrain_fnames = fnames[:-n_valid]\nvalid_fnames = fnames[-n_valid:]",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "annotations_path",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "annotations_path = path / f'dataset/resized/annotations/37-38-PELLGREGORY/train'\nmodel_path = Path(args.MODEL_PATH) if args.MODEL_PATH is not None else path / 'models'\nmodel_path.mkdir(parents=True, exist_ok=True)\ntrain_path = path / f'dataset/resized/37-38-PELLGREGORY/train'\n# Datasets, DataLoaders\nfnames = list_files(train_path)\nn_valid = int(args.VALID_RATIO * len(fnames))\ntrain_fnames = fnames[:-n_valid]\nvalid_fnames = fnames[-n_valid:]\nprint(f'Number of train images: {len(train_fnames)}, Number of validation images: {len(valid_fnames)}')",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "model_path",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "model_path = Path(args.MODEL_PATH) if args.MODEL_PATH is not None else path / 'models'\nmodel_path.mkdir(parents=True, exist_ok=True)\ntrain_path = path / f'dataset/resized/37-38-PELLGREGORY/train'\n# Datasets, DataLoaders\nfnames = list_files(train_path)\nn_valid = int(args.VALID_RATIO * len(fnames))\ntrain_fnames = fnames[:-n_valid]\nvalid_fnames = fnames[-n_valid:]\nprint(f'Number of train images: {len(train_fnames)}, Number of validation images: {len(valid_fnames)}')\nnum_workers = 0",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "train_path",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "train_path = path / f'dataset/resized/37-38-PELLGREGORY/train'\n# Datasets, DataLoaders\nfnames = list_files(train_path)\nn_valid = int(args.VALID_RATIO * len(fnames))\ntrain_fnames = fnames[:-n_valid]\nvalid_fnames = fnames[-n_valid:]\nprint(f'Number of train images: {len(train_fnames)}, Number of validation images: {len(valid_fnames)}')\nnum_workers = 0\nelastic_trans = None\naffine_trans = None",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "fnames",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "fnames = list_files(train_path)\nn_valid = int(args.VALID_RATIO * len(fnames))\ntrain_fnames = fnames[:-n_valid]\nvalid_fnames = fnames[-n_valid:]\nprint(f'Number of train images: {len(train_fnames)}, Number of validation images: {len(valid_fnames)}')\nnum_workers = 0\nelastic_trans = None\naffine_trans = None\nif args.USE_ELASTIC_TRANS:\n    elastic_trans = ElasticTransform(sigma=args.ELASTIC_SIGMA, alpha=args.ELASTIC_ALPHA)",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "n_valid",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "n_valid = int(args.VALID_RATIO * len(fnames))\ntrain_fnames = fnames[:-n_valid]\nvalid_fnames = fnames[-n_valid:]\nprint(f'Number of train images: {len(train_fnames)}, Number of validation images: {len(valid_fnames)}')\nnum_workers = 0\nelastic_trans = None\naffine_trans = None\nif args.USE_ELASTIC_TRANS:\n    elastic_trans = ElasticTransform(sigma=args.ELASTIC_SIGMA, alpha=args.ELASTIC_ALPHA)\nif args.USE_AFFINE_TRANS:",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "train_fnames",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "train_fnames = fnames[:-n_valid]\nvalid_fnames = fnames[-n_valid:]\nprint(f'Number of train images: {len(train_fnames)}, Number of validation images: {len(valid_fnames)}')\nnum_workers = 0\nelastic_trans = None\naffine_trans = None\nif args.USE_ELASTIC_TRANS:\n    elastic_trans = ElasticTransform(sigma=args.ELASTIC_SIGMA, alpha=args.ELASTIC_ALPHA)\nif args.USE_AFFINE_TRANS:\n    angle = 5",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "valid_fnames",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "valid_fnames = fnames[-n_valid:]\nprint(f'Number of train images: {len(train_fnames)}, Number of validation images: {len(valid_fnames)}')\nnum_workers = 0\nelastic_trans = None\naffine_trans = None\nif args.USE_ELASTIC_TRANS:\n    elastic_trans = ElasticTransform(sigma=args.ELASTIC_SIGMA, alpha=args.ELASTIC_ALPHA)\nif args.USE_AFFINE_TRANS:\n    angle = 5\n    scales = [0.95, 1.05]",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "num_workers",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "num_workers = 0\nelastic_trans = None\naffine_trans = None\nif args.USE_ELASTIC_TRANS:\n    elastic_trans = ElasticTransform(sigma=args.ELASTIC_SIGMA, alpha=args.ELASTIC_ALPHA)\nif args.USE_AFFINE_TRANS:\n    angle = 5\n    scales = [0.95, 1.05]\n    tx, ty = 0.03, 0.03\n    affine_trans = AffineTransform(angle, scales, tx, ty)",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "elastic_trans",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "elastic_trans = None\naffine_trans = None\nif args.USE_ELASTIC_TRANS:\n    elastic_trans = ElasticTransform(sigma=args.ELASTIC_SIGMA, alpha=args.ELASTIC_ALPHA)\nif args.USE_AFFINE_TRANS:\n    angle = 5\n    scales = [0.95, 1.05]\n    tx, ty = 0.03, 0.03\n    affine_trans = AffineTransform(angle, scales, tx, ty)\ntrain_ds = LandmarkDataset(train_fnames, annotations_path, args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE,",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "affine_trans",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "affine_trans = None\nif args.USE_ELASTIC_TRANS:\n    elastic_trans = ElasticTransform(sigma=args.ELASTIC_SIGMA, alpha=args.ELASTIC_ALPHA)\nif args.USE_AFFINE_TRANS:\n    angle = 5\n    scales = [0.95, 1.05]\n    tx, ty = 0.03, 0.03\n    affine_trans = AffineTransform(angle, scales, tx, ty)\ntrain_ds = LandmarkDataset(train_fnames, annotations_path, args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE,\n                           elastic_trans=elastic_trans,",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "train_ds",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "train_ds = LandmarkDataset(train_fnames, annotations_path, args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE,\n                           elastic_trans=elastic_trans,\n                           affine_trans=affine_trans, \n                           horizontal_flip=args.USE_HORIZONTAL_FLIP)\ntrain_dl = DataLoader(train_ds, args.BATCH_SIZE, shuffle=True, num_workers=num_workers)\nvalid_ds = LandmarkDataset(valid_fnames, annotations_path, args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE)\nvalid_dl = DataLoader(valid_ds, args.BATCH_SIZE, shuffle=False, num_workers=num_workers)\n\"\"\"\nCUDA is a parallel computing platform and programming model that makes using a GPU \nfor general purpose computing simple and elegant. ",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "train_dl",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "train_dl = DataLoader(train_ds, args.BATCH_SIZE, shuffle=True, num_workers=num_workers)\nvalid_ds = LandmarkDataset(valid_fnames, annotations_path, args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE)\nvalid_dl = DataLoader(valid_ds, args.BATCH_SIZE, shuffle=False, num_workers=num_workers)\n\"\"\"\nCUDA is a parallel computing platform and programming model that makes using a GPU \nfor general purpose computing simple and elegant. \n\"\"\"\ndevice = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')\nprint(f'Graphic Cart Used for the experiment: {device}')\n# unet model",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "valid_ds",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "valid_ds = LandmarkDataset(valid_fnames, annotations_path, args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE)\nvalid_dl = DataLoader(valid_ds, args.BATCH_SIZE, shuffle=False, num_workers=num_workers)\n\"\"\"\nCUDA is a parallel computing platform and programming model that makes using a GPU \nfor general purpose computing simple and elegant. \n\"\"\"\ndevice = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')\nprint(f'Graphic Cart Used for the experiment: {device}')\n# unet model\nif args.MODEL == 'unet':",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "valid_dl",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "valid_dl = DataLoader(valid_ds, args.BATCH_SIZE, shuffle=False, num_workers=num_workers)\n\"\"\"\nCUDA is a parallel computing platform and programming model that makes using a GPU \nfor general purpose computing simple and elegant. \n\"\"\"\ndevice = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')\nprint(f'Graphic Cart Used for the experiment: {device}')\n# unet model\nif args.MODEL == 'unet':\n    net = UNet(in_ch=3, out_ch=N_LANDMARKS, down_drop=args.DOWN_DROP, up_drop=args.UP_DROP)",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "device",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')\nprint(f'Graphic Cart Used for the experiment: {device}')\n# unet model\nif args.MODEL == 'unet':\n    net = UNet(in_ch=3, out_ch=N_LANDMARKS, down_drop=args.DOWN_DROP, up_drop=args.UP_DROP)\nnet.to(device)\n# count_parameters(net)\n# Optimizer + loss\ncriterion = nn.MSELoss()\noptimizer = torch.optim.Adam(net.parameters(), lr=args.LEARN_RATE, weight_decay=args.WEIGHT_DECAY)",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "criterion",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "criterion = nn.MSELoss()\noptimizer = torch.optim.Adam(net.parameters(), lr=args.LEARN_RATE, weight_decay=args.WEIGHT_DECAY)\n\"\"\"\nReduce learning rate when a metric has stopped improving. Models often benefit from reducing the \nlearning rate by a factor of 2-10 once learning stagnates. This callback monitors a quantity and if \nno improvement is seen for a 'patience' number of epochs, the learning rate is reduced.\n\"\"\"\nscheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=args.OPTIM_PATIENCE, verbose=True)\nstart_time = time.time()\ntrained_losses = []",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "optimizer",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "optimizer = torch.optim.Adam(net.parameters(), lr=args.LEARN_RATE, weight_decay=args.WEIGHT_DECAY)\n\"\"\"\nReduce learning rate when a metric has stopped improving. Models often benefit from reducing the \nlearning rate by a factor of 2-10 once learning stagnates. This callback monitors a quantity and if \nno improvement is seen for a 'patience' number of epochs, the learning rate is reduced.\n\"\"\"\nscheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=args.OPTIM_PATIENCE, verbose=True)\nstart_time = time.time()\ntrained_losses = []\ntrained_mre = []",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "scheduler",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=args.OPTIM_PATIENCE, verbose=True)\nstart_time = time.time()\ntrained_losses = []\ntrained_mre = []\n#Success Detection Rate\ntrained_sdr_4mm = [] \ndef train():\n    trained_examples = 0\n    train_loss, train_mre, train_sdr_2mm,train_sdr_2_5mm,train_sdr_3mm,train_sdr_4mm = 0, 0, 0, 0, 0, 0\n  #  print(train_dl)    ",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "start_time",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "start_time = time.time()\ntrained_losses = []\ntrained_mre = []\n#Success Detection Rate\ntrained_sdr_4mm = [] \ndef train():\n    trained_examples = 0\n    train_loss, train_mre, train_sdr_2mm,train_sdr_2_5mm,train_sdr_3mm,train_sdr_4mm = 0, 0, 0, 0, 0, 0\n  #  print(train_dl)    \n    '''We train the model and continue with the extraction of necessary information'''",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "trained_losses",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "trained_losses = []\ntrained_mre = []\n#Success Detection Rate\ntrained_sdr_4mm = [] \ndef train():\n    trained_examples = 0\n    train_loss, train_mre, train_sdr_2mm,train_sdr_2_5mm,train_sdr_3mm,train_sdr_4mm = 0, 0, 0, 0, 0, 0\n  #  print(train_dl)    \n    '''We train the model and continue with the extraction of necessary information'''\n    net.train() ",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "trained_mre",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "trained_mre = []\n#Success Detection Rate\ntrained_sdr_4mm = [] \ndef train():\n    trained_examples = 0\n    train_loss, train_mre, train_sdr_2mm,train_sdr_2_5mm,train_sdr_3mm,train_sdr_4mm = 0, 0, 0, 0, 0, 0\n  #  print(train_dl)    \n    '''We train the model and continue with the extraction of necessary information'''\n    net.train() \n    for imgs, true_points, _ in train_dl:",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "trained_sdr_4mm",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "trained_sdr_4mm = [] \ndef train():\n    trained_examples = 0\n    train_loss, train_mre, train_sdr_2mm,train_sdr_2_5mm,train_sdr_3mm,train_sdr_4mm = 0, 0, 0, 0, 0, 0\n  #  print(train_dl)    \n    '''We train the model and continue with the extraction of necessary information'''\n    net.train() \n    for imgs, true_points, _ in train_dl:\n        imgs = imgs.to(device)\n        true_points = true_points.to(device)",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "best_val_loss",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "best_val_loss = None\nnum_bad_epochs = 0\ntry:\n    # Record the start time\n    start_time = time.time()\n    print(f\"Training started at: {time.ctime(start_time)}\")\n    for e in range(1, args.EPOCHS + 1):\n        train_loss = train()\n        val_loss, val_sdr_2mm, val_sdr_2_5mm, val_sdr_3mm, val_sdr_4mm, val_mre = validate()\n        scheduler.step(val_loss)",
+        "detail": "train",
+        "documentation": {}
+    },
+    {
+        "label": "num_bad_epochs",
+        "kind": 5,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "num_bad_epochs = 0\ntry:\n    # Record the start time\n    start_time = time.time()\n    print(f\"Training started at: {time.ctime(start_time)}\")\n    for e in range(1, args.EPOCHS + 1):\n        train_loss = train()\n        val_loss, val_sdr_2mm, val_sdr_2_5mm, val_sdr_3mm, val_sdr_4mm, val_mre = validate()\n        scheduler.step(val_loss)\n        if args.SAVE_EPOCHS is not None and e in args.SAVE_EPOCHS:",
+        "detail": "train",
+        "documentation": {}
+    }
+]

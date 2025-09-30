@@ -1,0 +1,18 @@
+name: pytorchenv
+channels:
+  - defaults
+  - pytorch
+dependencies:
+  - numpy
+  - pandas
+  - matplotlib
+  - pillow
+  - pip
+  - plotly
+  - scikit-learn
+  - seaborn
+  - python
+  - jupyter
+  - pytorch
+  - torchvision
+  - cudatoolkit
