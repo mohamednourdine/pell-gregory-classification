@@ -7,7 +7,8 @@ from scipy import ndimage
 ORIG_IMAGE_X = 1100
 ORIG_IMAGE_Y = 600
 PIXELS_PER_MM = 6
-N_LANDMARKS = 5
+N_LANDMARKS = 10  # Updated to 10 for unified model (5 left + 5 right)
+N_LANDMARKS_PER_SIDE = 5  # 5 landmarks per side (left or right)
 
 
 def list_files(dir_path):

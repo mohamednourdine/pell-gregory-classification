@@ -20,7 +20,8 @@ from pathlib import Path
 
 from utilities.common_utils import *
 from utilities.plotting import *
-from model import UNet
+from model import UNet, UnifiedUNet
+from utilities.landmark_utils import UnifiedLandmarkDataset, LandmarkDataset
 
 from utilities.plotting import *
 
@@ -53,24 +54,48 @@ parser.add_argument('--EPOCHS', type=int, default=200)
 parser.add_argument('--VALID_RATIO', type=float, default=0.15) #Validation split using a ratio of 85:15
 parser.add_argument('--SAVE_EPOCHS', type=lambda epochs: [float(epoch) for epoch in epochs.split(',')], default=None)
 parser.add_argument('--VAL_MRE_STOP', type=float, default=None, help='The system stops training if validation MRE drops below the specified value.')
+parser.add_argument('--unified', action='store_true', help='Use unified model for both left and right landmarks')
 args = parser.parse_args()
 
-print(f'Training model {args.MODEL_NAME}')
+print(f'Training unified model {args.MODEL_NAME}')
 
-# Data paths
+# Data paths for both left and right landmarks
 path = Path(args.DATA_PATH)
-annotations_path = path / f'dataset/resized/annotations/37-38-PELLGREGORY/train'
 model_path = Path(args.MODEL_PATH) if args.MODEL_PATH is not None else path / 'models'
 model_path.mkdir(parents=True, exist_ok=True)
-train_path = path / f'dataset/resized/37-38-PELLGREGORY/train'
 
+# Paths for left side (37-38-PELLGREGORY)
+left_annotations_path = path / f'dataset/resized/annotations/37-38-PELLGREGORY/train'
+left_train_path = path / f'dataset/resized/37-38-PELLGREGORY/train'
 
-# Datasets, DataLoaders
-fnames = list_files(train_path)
-n_valid = int(args.VALID_RATIO * len(fnames))
-train_fnames = fnames[:-n_valid]
-valid_fnames = fnames[-n_valid:]
-print(f'Number of train images: {len(train_fnames)}, Number of validation images: {len(valid_fnames)}')
+# Paths for right side (47-48-PELLGREGORY)
+right_annotations_path = path / f'dataset/resized/annotations/47-48-PELLGREGORY/train'
+right_train_path = path / f'dataset/resized/47-48-PELLGREGORY/train'
+
+# Get file lists for both sides
+left_fnames = list_files(left_train_path)
+right_fnames = list_files(right_train_path)
+
+print(f'Left side images: {len(left_fnames)}, Right side images: {len(right_fnames)}')
+print(f'Total combined images: {len(left_fnames) + len(right_fnames)}')
+
+# Calculate validation split for combined dataset
+total_files = len(left_fnames) + len(right_fnames)
+n_valid = int(args.VALID_RATIO * total_files)
+
+# Split each side proportionally for validation
+left_n_valid = max(1, int(args.VALID_RATIO * len(left_fnames)))  # Ensure at least 1
+right_n_valid = max(1, int(args.VALID_RATIO * len(right_fnames)))  # Ensure at least 1
+
+left_train_fnames = left_fnames[:-left_n_valid] if left_n_valid < len(left_fnames) else left_fnames[:-1]
+left_valid_fnames = left_fnames[-left_n_valid:] if left_n_valid < len(left_fnames) else left_fnames[-1:]
+
+right_train_fnames = right_fnames[:-right_n_valid] if right_n_valid < len(right_fnames) else right_fnames[:-1]
+right_valid_fnames = right_fnames[-right_n_valid:] if right_n_valid < len(right_fnames) else right_fnames[-1:]
+
+print(f'Training: Left={len(left_train_fnames)}, Right={len(right_train_fnames)}, Total={len(left_train_fnames) + len(right_train_fnames)}')
+print(f'Validation: Left={len(left_valid_fnames)}, Right={len(right_valid_fnames)}, Total={len(left_valid_fnames) + len(right_valid_fnames)}')
+
 num_workers = 0
 elastic_trans = None
 affine_trans = None
@@ -82,13 +107,24 @@ if args.USE_AFFINE_TRANS:
     tx, ty = 0.03, 0.03
     affine_trans = AffineTransform(angle, scales, tx, ty)
 
-train_ds = LandmarkDataset(train_fnames, annotations_path, args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE,
-                           elastic_trans=elastic_trans,
-                           affine_trans=affine_trans, 
-                           horizontal_flip=args.USE_HORIZONTAL_FLIP)
+# Create unified datasets
+train_ds = UnifiedLandmarkDataset(
+    left_train_fnames, right_train_fnames,
+    left_annotations_path, right_annotations_path,
+    args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE,
+    elastic_trans=elastic_trans,
+    affine_trans=affine_trans, 
+    horizontal_flip=args.USE_HORIZONTAL_FLIP
+)
 
+valid_ds = UnifiedLandmarkDataset(
+    left_valid_fnames, right_valid_fnames,
+    left_annotations_path, right_annotations_path,
+    args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE
+)
+
+# Create data loaders
 train_dl = DataLoader(train_ds, args.BATCH_SIZE, shuffle=True, num_workers=num_workers)
-valid_ds = LandmarkDataset(valid_fnames, annotations_path, args.GAUSS_SIGMA, args.GAUSS_AMPLITUDE)
 valid_dl = DataLoader(valid_ds, args.BATCH_SIZE, shuffle=False, num_workers=num_workers)
 
 
@@ -101,9 +137,11 @@ for general purpose computing simple and elegant.
 device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
 print(f'Graphic Cart Used for the experiment: {device}')
 
-# unet model
 if args.MODEL == 'unet':
-    net = UNet(in_ch=3, out_ch=N_LANDMARKS, down_drop=args.DOWN_DROP, up_drop=args.UP_DROP)
+    net = UnifiedUNet(in_ch=3, down_drop=args.DOWN_DROP, up_drop=args.UP_DROP)
+    print(f'Using Unified U-Net model with {N_LANDMARKS} landmarks ({N_LANDMARKS_PER_SIDE} per side)')
+else:
+    raise ValueError(f"Unknown model type: {args.MODEL}")
    
 net.to(device)
 # count_parameters(net)
@@ -115,7 +153,7 @@ Reduce learning rate when a metric has stopped improving. Models often benefit f
 learning rate by a factor of 2-10 once learning stagnates. This callback monitors a quantity and if 
 no improvement is seen for a 'patience' number of epochs, the learning rate is reduced.
 """
-scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=args.OPTIM_PATIENCE, verbose=True)
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=args.OPTIM_PATIENCE)
 
 
 start_time = time.time()
@@ -132,8 +170,14 @@ def train():
   #  print(train_dl)    
     '''We train the model and continue with the extraction of necessary information'''
     net.train() 
+    
+    print(f"Starting training loop with {len(train_dl)} batches...")
+    batch_count = 0
 
     for imgs, true_points, _ in train_dl:
+        batch_count += 1
+        if batch_count % 10 == 1:  # Print progress every 10 batches
+            print(f"Processing batch {batch_count}/{len(train_dl)}")
         
         imgs = imgs.to(device)
         true_points = true_points.to(device)
