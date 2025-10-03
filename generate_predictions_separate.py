@@ -20,7 +20,7 @@ def get_predicted_landmarks_single(heatmap, gauss_sigma):
     predicted_landmarks = []
     max_activations = []
     
-    for i in range(N_LANDMARKS_PER_SIDE):
+    for i in range(N_LANDMARKS):
         landmark_heatmap = heatmap[i]
         max_activation = np.max(landmark_heatmap)
         max_activations.append(max_activation)
@@ -80,7 +80,7 @@ def main():
     model.eval()
     
     print(f'Loaded {args.SIDE} side model from {model_path}')
-    print(f'Model expects {N_LANDMARKS_PER_SIDE} landmarks')
+    print(f'Model expects {N_LANDMARKS} landmarks')
     
     # Generate predictions
     log_path = Path(args.LOG_PATH) / args.DATA_SPLIT / args.SIDE / model_path.stem / 'predictions'
@@ -114,15 +114,15 @@ def main():
                     row_data = {'file': img_name}
                     
                     # Add activation columns
-                    for lm_idx in range(N_LANDMARKS_PER_SIDE):
+                    for lm_idx in range(N_LANDMARKS):
                         row_data[f'{lm_idx}_act'] = max_activations[lm_idx]
                     
                     # Add Y coordinate columns
-                    for lm_idx in range(N_LANDMARKS_PER_SIDE):
+                    for lm_idx in range(N_LANDMARKS):
                         row_data[f'{lm_idx}_y'] = pred_landmarks[lm_idx, 1]  # Y coordinate
                     
                     # Add X coordinate columns
-                    for lm_idx in range(N_LANDMARKS_PER_SIDE):
+                    for lm_idx in range(N_LANDMARKS):
                         row_data[f'{lm_idx}_x'] = pred_landmarks[lm_idx, 0]  # X coordinate
                     
                     all_predictions.append(row_data)
@@ -136,7 +136,7 @@ def main():
     print(f'Total predictions: {len(all_predictions)}')
     print(f'Unique images: {predictions_df["file"].nunique()}')
     print(f'Samples per image: {args.SAMPLES}')
-    print(f'Landmarks per side: {N_LANDMARKS_PER_SIDE}')
+    print(f'Landmarks per side: {N_LANDMARKS}')
 
 if __name__ == '__main__':
     main()

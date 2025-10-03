@@ -89,7 +89,7 @@ def main():
     print(f"Loaded {len(predictions_df)} prediction records")
     
     # Compute metrics
-    radial_errors = np.zeros((len(test_files), N_LANDMARKS_PER_SIDE))
+    radial_errors = np.zeros((len(test_files), N_LANDMARKS))
     
     print(f"\\n=== EVALUATING {args.SIDE.upper()} SIDE ({side_name}) ===")
     for i, image_file in enumerate(test_files):
@@ -101,14 +101,14 @@ def main():
             continue
             
         # Extract landmarks from original format (direct columns instead of samples)
-        predicted_landmarks = np.zeros((len(image_predictions), N_LANDMARKS_PER_SIDE, 2))
-        activations = np.zeros((len(image_predictions), N_LANDMARKS_PER_SIDE))
+        predicted_landmarks = np.zeros((len(image_predictions), N_LANDMARKS, 2))
+        activations = np.zeros((len(image_predictions), N_LANDMARKS))
         
-        for sample_idx, (_, row) in enumerate(image_predictions.iterrows()):
-            for lm_idx in range(N_LANDMARKS_PER_SIDE):
-                predicted_landmarks[sample_idx, lm_idx, 0] = row[f'{lm_idx}_x']  # X
-                predicted_landmarks[sample_idx, lm_idx, 1] = row[f'{lm_idx}_y']  # Y
-                activations[sample_idx, lm_idx] = row[f'{lm_idx}_act']
+        for idx, row in image_predictions.iterrows():
+            for lm_idx in range(N_LANDMARKS):
+                predicted_landmarks[idx, lm_idx, 0] = row[f'{lm_idx}_x']  # X
+                predicted_landmarks[idx, lm_idx, 1] = row[f'{lm_idx}_y']  # Y
+                activations[idx, lm_idx] = row[f'{lm_idx}_act']
         
         # Compute mean across samples
         predicted_landmarks_mean = np.mean(predicted_landmarks, axis=0)

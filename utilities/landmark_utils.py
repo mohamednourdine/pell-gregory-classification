@@ -24,13 +24,15 @@ def get_annots_for_image(annotations_path, image_path, rescaled_image_size=None,
     '''
     Gets all the annations of an image and return in a simple array format of [[x1,y1], [x2,y2], ...] 
     '''
-    # Convert to Path object if it's a string
+    # Convert to Path objects if they are strings
     if isinstance(image_path, str):
         image_path = Path(image_path)
+    if isinstance(annotations_path, str):
+        annotations_path = Path(annotations_path)
     
     image_id = image_path.stem
     annots = (annotations_path / f'{image_id}.txt').read_text()
-    annots = annots.split('\n')[:N_LANDMARKS_PER_SIDE]  # Each side has 5 landmarks
+    annots = annots.split('\n')[:N_LANDMARKS]  # Each side has 5 landmarks
     annots = [l.split(',') for l in annots]
     annots = [(float(l[0]), float(l[1])) for l in annots];
     annots = np.array(annots)
@@ -69,131 +71,6 @@ def reset_heatmap_maximum(heatmap, amplitude):
 class ArrayToTensor(object):
     def __call__(self, np_array):
         return torch.from_numpy(np_array).float()
-
-
-class UnifiedLandmarkDataset(Dataset):
-    """Unified dataset for both left and right landmarks"""
-    
-    def __init__(self, image_fnames_left, image_fnames_right, 
-                 annotations_path_left, annotations_path_right,
-                 gauss_sigma, gauss_amplitude,
-                 elastic_trans=None, affine_trans=None, horizontal_flip=False):
-        
-        # Combine both datasets
-        self.combined_data = []
-        
-        # Add left-side images with side indicator
-        for fname in image_fnames_left:
-            self.combined_data.append({
-                'image_path': fname,
-                'annotations_path': annotations_path_left,
-                'side': 'left',
-                'landmark_offset': 0  # Left landmarks use indices 0-4
-            })
-        
-        # Add right-side images with side indicator  
-        for fname in image_fnames_right:
-            self.combined_data.append({
-                'image_path': fname,
-                'annotations_path': annotations_path_right,
-                'side': 'right',
-                'landmark_offset': 5  # Right landmarks use indices 5-9
-            })
-        
-        self.gauss_sigma = gauss_sigma
-        self.gauss_amplitude = gauss_amplitude
-        self.elastic_trans = elastic_trans
-        self.affine_trans = affine_trans
-        self.horizontal_flip = horizontal_flip
-
-    def __len__(self):
-        return len(self.combined_data)
-
-    def __getitem__(self, idx):
-        data_item = self.combined_data[idx]
-        
-        # Set random seed for reproducible transforms
-        seed = int(random.random() * 10000000)
-        np.random.seed(seed)
-
-        # Load image
-        x = PIL.Image.open(data_item['image_path']).convert('L')
-        image_size = x.size[0]
-        x = np.array(x)
-        
-        # Transform flags
-        do_affine = False
-        do_elastic = False
-        do_flip = False
-        
-        if self.affine_trans is not None:
-            do_affine = np.random.uniform() > 0.02
-            if do_affine:
-                affine_matrix = self.affine_trans.get_matrix(x)
-                affine_matrix = np.linalg.inv(affine_matrix)
-
-        if self.elastic_trans is not None:
-            do_elastic = True
-            if do_elastic:
-                x_coords, y_coords, _, _ = self.elastic_trans.get_coordinates(x)
-                elastic_trans_coordinates = (y_coords, x_coords)
-
-        if self.horizontal_flip:
-            do_flip = np.random.uniform() > 0.5
-
-        # Apply transforms to image
-        if self.elastic_trans is not None and do_elastic:
-            x = ndimage.interpolation.map_coordinates(x, elastic_trans_coordinates, order=1).reshape(x.shape)
-        if self.affine_trans is not None and do_affine:
-            x = ndimage.affine_transform(x, affine_matrix, offset=0, order=1)
-        if self.horizontal_flip and do_flip:
-            x = np.ascontiguousarray(np.flip(x, axis=1))
-            
-        # Convert to tensor format
-        x = np.expand_dims(x, 2)
-        x = transforms.ToTensor()(x)
-        x = transforms.Lambda(lambda x: x.repeat(3, 1, 1))(x)
-        x = transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))(x)
-
-        # Create unified heatmap with 10 channels (5 left + 5 right)
-        y = np.zeros((N_LANDMARKS, image_size, image_size))
-        
-        if data_item['annotations_path'] is not None:
-            # Load annotations for this side (5 landmarks)
-            annots = get_annots_for_image(data_item['annotations_path'], data_item['image_path'], 
-                                        rescaled_image_size=image_size)
-            
-            if self.horizontal_flip and do_flip:
-                for i in range(annots.shape[0]):
-                    annots[i][0] += 2 * (image_size / 2.0 - annots[i][0])
-            
-            # Create heatmaps for this side's landmarks
-            side_heatmaps = create_true_heatmaps(annots, image_size, amplitude=self.gauss_amplitude)
-            
-            # Apply transforms to heatmaps
-            if self.elastic_trans is not None and do_elastic:
-                for i in range(side_heatmaps.shape[0]):
-                    side_heatmaps[i] = ndimage.interpolation.map_coordinates(
-                        side_heatmaps[i], elastic_trans_coordinates, order=1).reshape(side_heatmaps[i].shape)
-                    side_heatmaps[i] = reset_heatmap_maximum(side_heatmaps[i], self.gauss_amplitude)
-
-            if self.affine_trans is not None and do_affine:
-                for i in range(side_heatmaps.shape[0]):
-                    side_heatmaps[i] = ndimage.affine_transform(side_heatmaps[i], affine_matrix, offset=0, order=1)
-                    side_heatmaps[i] = reset_heatmap_maximum(side_heatmaps[i], self.gauss_amplitude)
-
-            # Apply gaussian filter
-            for i in range(side_heatmaps.shape[0]):
-                side_heatmaps[i] = ndimage.gaussian_filter(side_heatmaps[i], sigma=self.gauss_sigma, 
-                                                         truncate=GAUSSIAN_TRUNCATE)
-            
-            # Place in correct positions in unified heatmap
-            landmark_start = data_item['landmark_offset']
-            landmark_end = landmark_start + N_LANDMARKS_PER_SIDE
-            y[landmark_start:landmark_end] = side_heatmaps
-
-        y = torch.from_numpy(y).float()
-        return x, y, str(data_item['image_path'])
 
 
 class LandmarkDataset(Dataset):
@@ -344,26 +221,3 @@ def radial_errors_batch(preds, targs, gauss_sigma):
     for i in range(batch_size):
         batch_radial_errors[i] = radial_errors_calcalation(preds[i], targs[i], gauss_sigma)
     return batch_radial_errors
-
-def aug_and_save(img, img_name, label, aug_list, base_path):
-    kp = [list_to_kp(label)]
-    img = shrink.augment_image(img)
-    kp = shrink.augment_keypoints(kp)
-    img_save_name = base_path + "/" + img_name + "_aug{}".format(0)
-    io.imsave(img_save_name + ".bmp", img)
-    with open(img_save_name + ".txt", "w") as lf:
-            stringified = [str(tup) for tup in kp_to_list(kp[0].keypoints)]
-            stringified = [s.replace("(", "").replace(")","") for s in stringified]
-            lf.write("\n".join(stringified))
-    for i, aug in enumerate(aug_list):
-        img_aug = aug.augment_image(img)
-        kp_aug = aug.augment_keypoints(kp)
-        # save img:
-        img_save_name = base_path + "/" + img_name + "_aug{}".format(i+1)
-        io.imsave(img_save_name + ".bmp", img_aug)
-        # save labelfile:
-        print(img_save_name)
-        with open(img_save_name + ".txt", "w") as lf:
-            stringified = [str(tup) for tup in kp_to_list(kp_aug[0].keypoints)]
-            stringified = [s.replace("(", "").replace(")","") for s in stringified]
-            lf.write("\n".join(stringified))

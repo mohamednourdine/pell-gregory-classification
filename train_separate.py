@@ -158,8 +158,8 @@ def train_separate_model():
     print(f'Graphic Cart Used for the experiment: {device}')
 
     if args.MODEL == 'unet':
-        net = UNet(in_ch=3, out_ch=N_LANDMARKS_PER_SIDE, down_drop=args.DOWN_DROP, up_drop=args.UP_DROP)
-        print(f'Using U-Net model with {N_LANDMARKS_PER_SIDE} landmarks for {args.SIDE} side')
+        net = UNet(in_ch=3, out_ch=N_LANDMARKS, down_drop=args.DOWN_DROP, up_drop=args.UP_DROP)
+        print(f'Using U-Net model with {N_LANDMARKS} landmarks for {args.SIDE} side')
     else:
         raise ValueError(f"Unknown model type: {args.MODEL}")
        
@@ -219,7 +219,7 @@ def train_separate_model():
         train_loss_avg = train_loss_sum / len(train_dl)
         # Flatten the list of radial error arrays properly  
         train_radial_errors_flat = np.concatenate(train_radial_errors) if train_radial_errors else np.array([])
-        train_metrics = get_accuracy_metrics(train_radial_errors_flat.reshape(-1, N_LANDMARKS_PER_SIDE))
+        train_metrics = get_accuracy_metrics(train_radial_errors_flat.reshape(-1, N_LANDMARKS))
         
         # Validation phase
         net.eval()
@@ -245,7 +245,7 @@ def train_separate_model():
         val_loss_avg = val_loss_sum / len(valid_dl)
         # Flatten the list of radial error arrays properly
         val_radial_errors_flat = np.concatenate(val_radial_errors) if val_radial_errors else np.array([])
-        val_metrics = get_accuracy_metrics(val_radial_errors_flat.reshape(-1, N_LANDMARKS_PER_SIDE))
+        val_metrics = get_accuracy_metrics(val_radial_errors_flat.reshape(-1, N_LANDMARKS))
         
         epoch_duration = time.time() - epoch_start_time
         

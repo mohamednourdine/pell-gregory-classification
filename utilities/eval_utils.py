@@ -24,7 +24,7 @@ def get_true_landmarks(annotations_path, image_path):
     '''
     image_id = image_path.stem     #The stem of the filename identified by the path (i.e. the filename without the final extension).
     annots = (annotations_path / f'{image_id}.txt').read_text()
-    annots = annots.split('\n')[:N_LANDMARKS_PER_SIDE]  # 5 landmarks per side
+    annots = annots.split('\n')[:N_LANDMARKS]  # 5 landmarks per side
     annots = [l.split(',') for l in annots]
     true_landmarks = [np.array([float(l[1]), float(l[0])]) for l in annots]  # Swap XY to YX order
     return np.array(true_landmarks)
@@ -218,8 +218,8 @@ def get_predictions_for_image_from_unified_df(df, image_name, n_samples):
     samples = image_predictions['sample'].unique()[:n_samples]
     n_available_samples = len(samples)
     
-    landmark_samples = np.zeros((n_available_samples, N_LANDMARKS_PER_SIDE, 2))
-    activation_samples = np.zeros((n_available_samples, N_LANDMARKS_PER_SIDE))
+    landmark_samples = np.zeros((n_available_samples, N_LANDMARKS, 2))
+    activation_samples = np.zeros((n_available_samples, N_LANDMARKS))
     
     for sample_idx, sample_id in enumerate(samples):
         sample_data = image_predictions[image_predictions['sample'] == sample_id]
@@ -228,13 +228,13 @@ def get_predictions_for_image_from_unified_df(df, image_name, n_samples):
             landmark_idx = row['landmark']
             # Map from unified landmark index to side-specific index
             if side == 'left':
-                if landmark_idx >= N_LANDMARKS_PER_SIDE:
+                if landmark_idx >= N_LANDMARKS:
                     continue  # Skip right landmarks for left side
                 side_landmark_idx = landmark_idx
             else:  # right side
-                if landmark_idx < N_LANDMARKS_PER_SIDE:
+                if landmark_idx < N_LANDMARKS:
                     continue  # Skip left landmarks for right side
-                side_landmark_idx = landmark_idx - N_LANDMARKS_PER_SIDE
+                side_landmark_idx = landmark_idx - N_LANDMARKS
             
             landmark_samples[sample_idx, side_landmark_idx] = [row['y'], row['x']]  # Y, X order
             activation_samples[sample_idx, side_landmark_idx] = row['activation']
@@ -261,17 +261,17 @@ def get_predictions_for_image_from_df(df, image_name, n_samples):
     if len(image_predictions) > 0:
         side = image_predictions.iloc[0].get('side', 'unknown')
         if side == 'left':
-            landmark_indices = list(range(0, N_LANDMARKS_PER_SIDE))  # 0-4
+            landmark_indices = list(range(0, N_LANDMARKS))  # 0-4
         elif side == 'right':
-            landmark_indices = list(range(N_LANDMARKS_PER_SIDE, N_LANDMARKS))  # 5-9
+            landmark_indices = list(range(N_LANDMARKS, N_LANDMARKS * 2))  # 5-9
         else:
             # Fallback: assume all landmarks are available (legacy format)
-            landmark_indices = list(range(N_LANDMARKS_PER_SIDE))
+            landmark_indices = list(range(N_LANDMARKS))
     
     # Extract landmark coordinates and activations
     n_available_samples = min(len(image_predictions), n_samples)
-    landmark_samples = np.zeros((n_available_samples, N_LANDMARKS_PER_SIDE, 2))
-    activation_samples = np.zeros((n_available_samples, N_LANDMARKS_PER_SIDE))
+    landmark_samples = np.zeros((n_available_samples, N_LANDMARKS, 2))
+    activation_samples = np.zeros((n_available_samples, N_LANDMARKS))
     
     for sample_idx in range(n_available_samples):
         prediction = image_predictions.iloc[sample_idx]
