@@ -17,7 +17,6 @@ for I in $(seq 1 $ensemble_size)
 do
     echo "Training ensemble member $I/$ensemble_size..."
     python train.py \
-        --unified \
         --MODEL_PATH trained/$mode/$model_name \
         --MODEL_NAME $I \
         --EXPERIMENT_NAME unified_experiment_$I \

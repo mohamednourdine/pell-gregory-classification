@@ -16,14 +16,13 @@ import random
 import io
 import sys
 import time
+import gc  # For garbage collection
 from pathlib import Path
 
 from utilities.common_utils import *
 from utilities.plotting import *
-from model import UNet, UnifiedUNet
-from utilities.landmark_utils import UnifiedLandmarkDataset, LandmarkDataset
-
-from utilities.plotting import *
+from model import UnifiedUNet
+from utilities.landmark_utils import UnifiedLandmarkDataset
 
 ORIG_IMAGE_SIZE = np.array([ORIG_IMAGE_X, ORIG_IMAGE_Y])  # WxH
 random_id = int(random.uniform(0, 99999999))
@@ -38,7 +37,7 @@ parser.add_argument('--MODEL', type=str, default='unet')
 parser.add_argument('--FILTERS', type=lambda layers: [int(layer) for layer in layers.split(',')], default='64,128,256,512,1024')
 parser.add_argument('--DOWN_DROP', type=lambda layers: [float(layer) for layer in layers.split(',')], default='0.4,0.4,0.4,0.4')
 parser.add_argument('--UP_DROP', type=lambda layers: [float(layer) for layer in layers.split(',')], default='0.4,0.4,0.4,0.4')
-parser.add_argument('--BATCH_SIZE', type=int, default=8)
+parser.add_argument('--BATCH_SIZE', type=int, default=64)
 parser.add_argument('--IMAGE_SIZE', type=int, default=256)
 parser.add_argument('--GAUSS_SIGMA', type=float, default=5.0)
 parser.add_argument('--GAUSS_AMPLITUDE', type=float, default=1000.0)
@@ -54,7 +53,6 @@ parser.add_argument('--EPOCHS', type=int, default=200)
 parser.add_argument('--VALID_RATIO', type=float, default=0.15) #Validation split using a ratio of 85:15
 parser.add_argument('--SAVE_EPOCHS', type=lambda epochs: [float(epoch) for epoch in epochs.split(',')], default=None)
 parser.add_argument('--VAL_MRE_STOP', type=float, default=None, help='The system stops training if validation MRE drops below the specified value.')
-parser.add_argument('--unified', action='store_true', help='Use unified model for both left and right landmarks')
 args = parser.parse_args()
 
 print(f'Training unified model {args.MODEL_NAME}')
@@ -200,6 +198,9 @@ def train():
         train_sdr_2_5mm += np.sum(radial_errors < 2.5)
         train_sdr_3mm += np.sum(radial_errors < 3)
         train_sdr_4mm += np.sum(radial_errors < 4)
+        
+        # Clean up references to free memory
+        del radial_errors
 
     trained_losses.append(f'{train_loss / trained_examples:{4}.{4}}')
     trained_mre.append(f'{train_mre / trained_examples:{4}.{4}}')
@@ -240,6 +241,9 @@ def validate():
             val_sdr_2_5mm += np.sum(radial_errors < 2.5)
             val_sdr_3mm += np.sum(radial_errors < 3)
             val_sdr_4mm += np.sum(radial_errors < 4)
+            
+            # Clean up references to free memory
+            del radial_errors
 
             # plot_imgs(imgs)
 
@@ -269,6 +273,10 @@ try:
         train_loss = train()
         val_loss, val_sdr_2mm, val_sdr_2_5mm, val_sdr_3mm, val_sdr_4mm, val_mre = validate()
         scheduler.step(val_loss)
+        
+        # Force garbage collection after each epoch to free memory
+        gc.collect()
+        torch.cuda.empty_cache() if torch.cuda.is_available() else None
 
         if args.SAVE_EPOCHS is not None and e in args.SAVE_EPOCHS:
             print(f'Saving model checkpoint (one of {args.SAVE_EPOCHS} requested).')

@@ -24,6 +24,10 @@ def get_annots_for_image(annotations_path, image_path, rescaled_image_size=None,
     '''
     Gets all the annations of an image and return in a simple array format of [[x1,y1], [x2,y2], ...] 
     '''
+    # Convert to Path object if it's a string
+    if isinstance(image_path, str):
+        image_path = Path(image_path)
+    
     image_id = image_path.stem
     annots = (annotations_path / f'{image_id}.txt').read_text()
     annots = annots.split('\n')[:N_LANDMARKS_PER_SIDE]  # Each side has 5 landmarks
@@ -301,7 +305,11 @@ def np_max_yx(arr):
 
 
 def get_max_heatmap_activation(tensor, gauss_sigma):
-    array = tensor.cpu().detach().numpy()
+    # Handle both tensor and numpy array inputs
+    if torch.is_tensor(tensor):
+        array = tensor.cpu().detach().numpy()
+    else:
+        array = tensor
     activations = ndimage.gaussian_filter(array, sigma=gauss_sigma, truncate=GAUSSIAN_TRUNCATE)
     max_val, max_pos = np_max_yx(activations)
     return max_val, max_pos
@@ -326,6 +334,13 @@ def radial_errors_batch(preds, targs, gauss_sigma):
     assert (preds.shape[0] == targs.shape[0])
     batch_size = preds.shape[0]
     batch_radial_errors = np.zeros((batch_size, N_LANDMARKS))
+    
+    # Convert to numpy if needed, ensuring no gradients are attached
+    if torch.is_tensor(preds):
+        preds = preds.detach().cpu().numpy()
+    if torch.is_tensor(targs):
+        targs = targs.detach().cpu().numpy()
+    
     for i in range(batch_size):
         batch_radial_errors[i] = radial_errors_calcalation(preds[i], targs[i], gauss_sigma)
     return batch_radial_errors

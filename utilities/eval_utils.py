@@ -20,11 +20,11 @@ from .common_utils import *
 
 def get_true_landmarks(annotations_path, image_path):
     ''' 
-    Returns an array of true landmarks for an image, and return an array of the results
+    Returns an array of true landmarks for an image (5 landmarks per side)
     '''
     image_id = image_path.stem     #The stem of the filename identified by the path (i.e. the filename without the final extension).
     annots = (annotations_path / f'{image_id}.txt').read_text()
-    annots = annots.split('\n')[:N_LANDMARKS]
+    annots = annots.split('\n')[:N_LANDMARKS_PER_SIDE]  # 5 landmarks per side
     annots = [l.split(',') for l in annots]
     true_landmarks = [np.array([float(l[1]), float(l[0])]) for l in annots]  # Swap XY to YX order
     return np.array(true_landmarks)
@@ -111,9 +111,11 @@ def radial_error_mm(true, pred):
 def get_radial_errors_mm_for_image(true_landmarks, predicted_landmarks):
     ''' 
         Returns an array containing the radial error for each landmark for the image.
+        Works with any number of landmarks (5 for single side, 10 for unified model).
     '''
-    radial_errors = np.zeros(N_LANDMARKS)
-    for lm in range(N_LANDMARKS):
+    n_landmarks = len(true_landmarks)
+    radial_errors = np.zeros(n_landmarks)
+    for lm in range(n_landmarks):
         radial_errors[lm] = radial_error_mm(true_landmarks[lm], predicted_landmarks[lm])
     return radial_errors
 
@@ -195,3 +197,92 @@ def get_test_predictions_df(model_log_dir):
     prediction_files = list_files(prediction_dir)
     predictions_df = read_prediction_files_as_df(prediction_files)
     return predictions_df
+
+
+def get_predictions_for_image_from_unified_df(df, image_name, n_samples):
+    """
+    Extract prediction samples for a specific image from unified model predictions DataFrame.
+    Works with the new format: image_name,sample,landmark,x,y,activation,side
+    """
+    # Filter predictions for this specific image
+    image_predictions = df[df['image_name'] == image_name]
+    
+    if len(image_predictions) == 0:
+        raise ValueError(f"No predictions found for image: {image_name}")
+    
+    # Determine the side
+    if len(image_predictions) > 0:
+        side = image_predictions.iloc[0]['side']
+    
+    # Group by sample to reconstruct landmark arrays
+    samples = image_predictions['sample'].unique()[:n_samples]
+    n_available_samples = len(samples)
+    
+    landmark_samples = np.zeros((n_available_samples, N_LANDMARKS_PER_SIDE, 2))
+    activation_samples = np.zeros((n_available_samples, N_LANDMARKS_PER_SIDE))
+    
+    for sample_idx, sample_id in enumerate(samples):
+        sample_data = image_predictions[image_predictions['sample'] == sample_id]
+        
+        for _, row in sample_data.iterrows():
+            landmark_idx = row['landmark']
+            # Map from unified landmark index to side-specific index
+            if side == 'left':
+                if landmark_idx >= N_LANDMARKS_PER_SIDE:
+                    continue  # Skip right landmarks for left side
+                side_landmark_idx = landmark_idx
+            else:  # right side
+                if landmark_idx < N_LANDMARKS_PER_SIDE:
+                    continue  # Skip left landmarks for right side
+                side_landmark_idx = landmark_idx - N_LANDMARKS_PER_SIDE
+            
+            landmark_samples[sample_idx, side_landmark_idx] = [row['y'], row['x']]  # Y, X order
+            activation_samples[sample_idx, side_landmark_idx] = row['activation']
+    
+    return landmark_samples, activation_samples
+
+
+def get_predictions_for_image_from_df(df, image_name, n_samples):
+    """
+    Extract prediction samples for a specific image from unified model predictions DataFrame.
+    Works with both legacy format and new unified format.
+    """
+    # Check if this is the new unified format
+    if 'sample' in df.columns and 'landmark' in df.columns:
+        return get_predictions_for_image_from_unified_df(df, image_name, n_samples)
+    
+    # Filter predictions for this specific image
+    image_predictions = df[df['image_name'] == image_name]
+    
+    if len(image_predictions) == 0:
+        raise ValueError(f"No predictions found for image: {image_name}")
+    
+    # Determine the side and corresponding landmark indices
+    if len(image_predictions) > 0:
+        side = image_predictions.iloc[0].get('side', 'unknown')
+        if side == 'left':
+            landmark_indices = list(range(0, N_LANDMARKS_PER_SIDE))  # 0-4
+        elif side == 'right':
+            landmark_indices = list(range(N_LANDMARKS_PER_SIDE, N_LANDMARKS))  # 5-9
+        else:
+            # Fallback: assume all landmarks are available (legacy format)
+            landmark_indices = list(range(N_LANDMARKS_PER_SIDE))
+    
+    # Extract landmark coordinates and activations
+    n_available_samples = min(len(image_predictions), n_samples)
+    landmark_samples = np.zeros((n_available_samples, N_LANDMARKS_PER_SIDE, 2))
+    activation_samples = np.zeros((n_available_samples, N_LANDMARKS_PER_SIDE))
+    
+    for sample_idx in range(n_available_samples):
+        prediction = image_predictions.iloc[sample_idx]
+        
+        for lm_idx, unified_idx in enumerate(landmark_indices):
+            # Extract coordinates (Y, X order)
+            y = prediction[f'{unified_idx}_y']
+            x = prediction[f'{unified_idx}_x']
+            activation = prediction[f'{unified_idx}_act']
+            
+            landmark_samples[sample_idx, lm_idx] = [y, x]
+            activation_samples[sample_idx, lm_idx] = activation
+    
+    return landmark_samples, activation_samples
