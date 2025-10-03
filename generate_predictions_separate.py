@@ -60,7 +60,7 @@ def main():
     # Setup paths
     data_path = Path('data/dataset/resized')
     images_path = data_path / side_name / args.DATA_SPLIT
-    annotations_path = data_path / 'annotations' / side_name
+    annotations_path = data_path / 'annotations' / side_name / args.DATA_SPLIT
     
     # Get test files
     test_files = list_files(images_path)
@@ -86,6 +86,7 @@ def main():
     log_path = Path(args.LOG_PATH) / args.DATA_SPLIT / args.SIDE / model_path.stem / 'predictions'
     log_path.mkdir(parents=True, exist_ok=True)
     
+    # Store predictions in the original format (one row per image per sample)
     all_predictions = []
     
     with torch.no_grad():
@@ -109,27 +110,31 @@ def main():
                         pred_heatmaps[img_idx].cpu().numpy(), args.GAUSS_SIGMA
                     )
                     
-                    # Save prediction for each landmark
+                    # Create row data in original format
+                    row_data = {'file': img_name}
+                    
+                    # Add activation columns
                     for lm_idx in range(N_LANDMARKS_PER_SIDE):
-                        prediction_data = {
-                            'image_name': img_name,
-                            'sample': sample_idx,
-                            'landmark': lm_idx,
-                            'x': pred_landmarks[lm_idx, 0],
-                            'y': pred_landmarks[lm_idx, 1],
-                            'activation': max_activations[lm_idx],
-                            'side': args.SIDE
-                        }
-                        all_predictions.append(prediction_data)
+                        row_data[f'{lm_idx}_act'] = max_activations[lm_idx]
+                    
+                    # Add Y coordinate columns
+                    for lm_idx in range(N_LANDMARKS_PER_SIDE):
+                        row_data[f'{lm_idx}_y'] = pred_landmarks[lm_idx, 1]  # Y coordinate
+                    
+                    # Add X coordinate columns
+                    for lm_idx in range(N_LANDMARKS_PER_SIDE):
+                        row_data[f'{lm_idx}_x'] = pred_landmarks[lm_idx, 0]  # X coordinate
+                    
+                    all_predictions.append(row_data)
     
-    # Save predictions to CSV
+    # Save predictions to CSV in original format
     predictions_df = pd.DataFrame(all_predictions)
-    csv_path = log_path / f'predictions_{args.SIDE}.csv'
-    predictions_df.to_csv(csv_path, index=False)
+    csv_path = log_path / f'{args.SIDE.upper()}-PG-Predictions.csv'
+    predictions_df.to_csv(csv_path, index=True)  # Include index like original
     
     print(f'✅ {args.SIDE.title()} side predictions saved to {csv_path}')
     print(f'Total predictions: {len(all_predictions)}')
-    print(f'Unique images: {predictions_df["image_name"].nunique()}')
+    print(f'Unique images: {predictions_df["file"].nunique()}')
     print(f'Samples per image: {args.SAMPLES}')
     print(f'Landmarks per side: {N_LANDMARKS_PER_SIDE}')
 

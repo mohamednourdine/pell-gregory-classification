@@ -65,7 +65,7 @@ def main():
     # Setup paths
     data_path = Path('data/dataset/resized')
     images_path = data_path / side_name / args.DATA_SPLIT
-    annotations_path = data_path / 'annotations' / side_name
+    annotations_path = data_path / 'annotations' / side_name / args.DATA_SPLIT
     
     # Get test files
     test_files = list_files(images_path)
@@ -78,7 +78,7 @@ def main():
     
     # Load pre-generated model predictions
     model_log_dir = Path(args.LOG_PATH) / args.DATA_SPLIT / args.SIDE / args.MODEL_NAME / 'predictions'
-    predictions_file = model_log_dir / f'predictions_{args.SIDE}.csv'
+    predictions_file = model_log_dir / f'{args.SIDE.upper()}-PG-Predictions.csv'
     
     if not predictions_file.exists():
         print(f"❌ Predictions file not found: {predictions_file}")
@@ -93,23 +93,26 @@ def main():
     
     print(f"\\n=== EVALUATING {args.SIDE.upper()} SIDE ({side_name}) ===")
     for i, image_file in enumerate(test_files):
-        # Get predictions for this image
-        image_predictions = predictions_df[predictions_df['image_name'] == image_file.name]
+        # Get predictions for this image (original format uses 'file' column)
+        image_predictions = predictions_df[predictions_df['file'] == image_file.name]
         
         if len(image_predictions) == 0:
             print(f"WARNING: No predictions found for {image_file.name}")
             continue
             
-        # Compute the statistics across all samples for the image
-        landmark_samples, activation_samples = get_predictions_for_image_from_df(
-            image_predictions, image_file.name, args.SAMPLES
-        )
+        # Extract landmarks from original format (direct columns instead of samples)
+        predicted_landmarks = np.zeros((len(image_predictions), N_LANDMARKS_PER_SIDE, 2))
+        activations = np.zeros((len(image_predictions), N_LANDMARKS_PER_SIDE))
         
-        if landmark_samples is None:
-            print(f"WARNING: Could not extract landmarks for {image_file.name}")
-            continue
-            
-        predicted_landmarks_mean, predicted_landmarks_var = get_predicted_landmarks_for_image(landmark_samples)
+        for sample_idx, (_, row) in enumerate(image_predictions.iterrows()):
+            for lm_idx in range(N_LANDMARKS_PER_SIDE):
+                predicted_landmarks[sample_idx, lm_idx, 0] = row[f'{lm_idx}_x']  # X
+                predicted_landmarks[sample_idx, lm_idx, 1] = row[f'{lm_idx}_y']  # Y
+                activations[sample_idx, lm_idx] = row[f'{lm_idx}_act']
+        
+        # Compute mean across samples
+        predicted_landmarks_mean = np.mean(predicted_landmarks, axis=0)
+        predicted_landmarks_var = np.var(predicted_landmarks, axis=0)
         
         # Compute radial errors
         true_landmarks = true_landmarks_dict[image_file.name]

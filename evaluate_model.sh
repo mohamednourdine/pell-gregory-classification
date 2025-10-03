@@ -1,14 +1,15 @@
 #!/bin/bash
 
-# Unified Model Evaluation Pipeline
-# Generates predictions and evaluates unified Pell-Gregory model
+# Separate Model Evaluation Pipeline
+# Generates predictions and evaluates separate left/right Pell-Gregory models
 
 echo "=========================================="
-echo "Unified Pell-Gregory Model Evaluation"
+echo "Separate Pell-Gregory Model Evaluation"
 echo "=========================================="
 
 # Default parameters
-MODEL_PATH="trained/unified/UnifiedPellGregory/1.pth"
+LEFT_MODEL_PATH="trained/left/LeftSidePellGregory/1.pth"
+RIGHT_MODEL_PATH="trained/right/RightSidePellGregory/1.pth"
 DATA_SPLIT="test"
 SAMPLES=15
 LOG_PATH="logs"
@@ -16,8 +17,12 @@ LOG_PATH="logs"
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
-        --model-path)
-            MODEL_PATH="$2"
+        --left-model)
+            LEFT_MODEL_PATH="$2"
+            shift 2
+            ;;
+        --right-model)
+            RIGHT_MODEL_PATH="$2"
             shift 2
             ;;
         --data-split)
@@ -35,7 +40,8 @@ while [[ $# -gt 0 ]]; do
         -h|--help)
             echo "Usage: $0 [OPTIONS]"
             echo "Options:"
-            echo "  --model-path PATH    Path to trained unified model (default: $MODEL_PATH)"
+            echo "  --left-model PATH    Path to trained left model (default: $LEFT_MODEL_PATH)"
+            echo "  --right-model PATH   Path to trained right model (default: $RIGHT_MODEL_PATH)"
             echo "  --data-split SPLIT   Data split to evaluate on: train/test (default: $DATA_SPLIT)"
             echo "  --samples NUM        Number of MC samples (default: $SAMPLES)"
             echo "  --log-path PATH      Path to save logs (default: $LOG_PATH)"
@@ -50,78 +56,120 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Extract model name from path
-MODEL_NAME=$(basename "$MODEL_PATH" .pth)
+# Extract model names from paths
+LEFT_MODEL_NAME=$(basename "$LEFT_MODEL_PATH" .pth)
+RIGHT_MODEL_NAME=$(basename "$RIGHT_MODEL_PATH" .pth)
 
 echo "Configuration:"
-echo "  Model Path: $MODEL_PATH"
-echo "  Model Name: $MODEL_NAME"
+echo "  Left Model Path: $LEFT_MODEL_PATH"
+echo "  Right Model Path: $RIGHT_MODEL_PATH"
+echo "  Left Model Name: $LEFT_MODEL_NAME"
+echo "  Right Model Name: $RIGHT_MODEL_NAME"
 echo "  Data Split: $DATA_SPLIT"
 echo "  Samples: $SAMPLES"
 echo "  Log Path: $LOG_PATH"
 echo ""
 
-# Check if model exists
-if [ ! -f "$MODEL_PATH" ]; then
-    echo "ERROR: Model file not found: $MODEL_PATH"
-    echo "Please ensure the unified model has been trained first."
+# Check if models exist
+if [ ! -f "$LEFT_MODEL_PATH" ]; then
+    echo "ERROR: Left model file not found: $LEFT_MODEL_PATH"
+    echo "Please ensure the left model has been trained first."
     exit 1
 fi
 
-# Step 1: Generate predictions
-echo "Step 1: Generating predictions for unified model..."
+if [ ! -f "$RIGHT_MODEL_PATH" ]; then
+    echo "ERROR: Right model file not found: $RIGHT_MODEL_PATH"
+    echo "Please ensure the right model has been trained first."
+    exit 1
+fi
+
+# Step 1: Generate predictions for left model
+echo "Step 1: Generating predictions for left model..."
 echo "----------------------------------------"
 
-python generate_predictions.py \
-    --MODE unified \
-    --MODEL_PATH "$MODEL_PATH" \
+python generate_predictions_separate.py \
+    --MODEL_PATH "$LEFT_MODEL_PATH" \
+    --SIDE left \
     --DATA_SPLIT "$DATA_SPLIT" \
-    --LOG_PATH "$LOG_PATH" \
+    --LOG_PATH "$LOG_PATH/left" \
     --SAMPLES "$SAMPLES" \
-    --LEFT_IMAGES_PATH "./data/dataset/resized/37-38-PELLGREGORY" \
-    --RIGHT_IMAGES_PATH "./data/dataset/resized/47-48-PELLGREGORY" \
-    --LEFT_ANNOT_PATH "./data/dataset/resized/annotations/37-38-PELLGREGORY" \
-    --RIGHT_ANNOT_PATH "./data/dataset/resized/annotations/47-48-PELLGREGORY" \
-    --unified \
     --BATCH_SIZE 16
 
 if [ $? -ne 0 ]; then
-    echo "ERROR: Prediction generation failed!"
+    echo "ERROR: Left model prediction generation failed!"
     exit 1
 fi
 
 echo ""
-echo "✅ Predictions generated successfully!"
+echo "✅ Left model predictions generated successfully!"
 echo ""
 
-# Step 2: Evaluate model
-echo "Step 2: Evaluating unified model performance..."
+# Step 2: Generate predictions for right model
+echo "Step 2: Generating predictions for right model..."
 echo "----------------------------------------"
 
-python evaluate.py \
-    --MODE unified \
+python generate_predictions_separate.py \
+    --MODEL_PATH "$RIGHT_MODEL_PATH" \
+    --SIDE right \
     --DATA_SPLIT "$DATA_SPLIT" \
-    --LOG_PATH "$LOG_PATH" \
+    --LOG_PATH "$LOG_PATH/right" \
     --SAMPLES "$SAMPLES" \
-    --MODEL_NAME "$MODEL_NAME" \
-    --LEFT_ANNOT_PATH "data/dataset/resized/annotations/37-38-PELLGREGORY/$DATA_SPLIT" \
-    --RIGHT_ANNOT_PATH "data/dataset/resized/annotations/47-48-PELLGREGORY/$DATA_SPLIT" \
-    --LEFT_IMAGES_PATH "data/dataset/resized/37-38-PELLGREGORY" \
-    --RIGHT_IMAGES_PATH "data/dataset/resized/47-48-PELLGREGORY" \
-    --unified
+    --BATCH_SIZE 16
 
 if [ $? -ne 0 ]; then
-    echo "ERROR: Model evaluation failed!"
+    echo "ERROR: Right model prediction generation failed!"
     exit 1
 fi
 
 echo ""
-echo "✅ Unified model evaluation completed successfully!"
+echo "✅ Right model predictions generated successfully!"
+echo ""
+
+# Step 3: Evaluate left model
+echo "Step 3: Evaluating left model performance..."
+echo "----------------------------------------"
+
+python evaluate_separate.py \
+    --SIDE left \
+    --DATA_SPLIT "$DATA_SPLIT" \
+    --LOG_PATH "$LOG_PATH/left" \
+    --SAMPLES "$SAMPLES" \
+    --MODEL_NAME "$LEFT_MODEL_NAME"
+
+if [ $? -ne 0 ]; then
+    echo "ERROR: Left model evaluation failed!"
+    exit 1
+fi
+
+echo ""
+echo "✅ Left model evaluation completed!"
+echo ""
+
+# Step 4: Evaluate right model
+echo "Step 4: Evaluating right model performance..."
+echo "----------------------------------------"
+
+python evaluate_separate.py \
+    --SIDE right \
+    --DATA_SPLIT "$DATA_SPLIT" \
+    --LOG_PATH "$LOG_PATH/right" \
+    --SAMPLES "$SAMPLES" \
+    --MODEL_NAME "$RIGHT_MODEL_NAME"
+
+if [ $? -ne 0 ]; then
+    echo "ERROR: Right model evaluation failed!"
+    exit 1
+fi
+
+echo ""
+echo "✅ Separate model evaluation completed successfully!"
 echo ""
 echo "Results Summary:"
-echo "  - Predictions saved in: $LOG_PATH/$DATA_SPLIT/unified/$MODEL_NAME/predictions/"
-echo "  - Evaluated both left (37-38-PELLGREGORY) and right (47-48-PELLGREGORY) landmarks"
+echo "  - Left model predictions saved in: $LOG_PATH/left/"
+echo "  - Right model predictions saved in: $LOG_PATH/right/" 
+echo "  - Left side: 5 landmarks (37-38-PELLGREGORY)"
+echo "  - Right side: 5 landmarks (47-48-PELLGREGORY)"
 echo "  - Used $SAMPLES Monte Carlo samples for uncertainty estimation"
-echo "  - Model predicts all 10 landmarks (5 left + 5 right) simultaneously"
+echo "  - Models trained separately for optimal performance"
 echo ""
 echo "=========================================="
