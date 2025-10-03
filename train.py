@@ -4,6 +4,12 @@ from torch.nn import functional as F
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 
+# Optimize CPU threading for maximum performance
+import os
+if 'OMP_NUM_THREADS' in os.environ:
+    torch.set_num_threads(int(os.environ['OMP_NUM_THREADS']))
+    print(f"PyTorch using {torch.get_num_threads()} threads for CPU training")
+
 from scipy import ndimage
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -21,8 +27,8 @@ from pathlib import Path
 
 from utilities.common_utils import *
 from utilities.plotting import *
-from model import UnifiedUNet
-from utilities.landmark_utils import UnifiedLandmarkDataset
+from model.unet_model import UNet
+from utilities.landmark_utils import LandmarkDataset
 
 ORIG_IMAGE_SIZE = np.array([ORIG_IMAGE_X, ORIG_IMAGE_Y])  # WxH
 random_id = int(random.uniform(0, 99999999))
@@ -136,8 +142,8 @@ device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('
 print(f'Graphic Cart Used for the experiment: {device}')
 
 if args.MODEL == 'unet':
-    net = UnifiedUNet(in_ch=3, down_drop=args.DOWN_DROP, up_drop=args.UP_DROP)
-    print(f'Using Unified U-Net model with {N_LANDMARKS} landmarks ({N_LANDMARKS_PER_SIDE} per side)')
+    net = UNet(in_ch=3, out_ch=N_LANDMARKS_PER_SIDE, down_drop=args.DOWN_DROP, up_drop=args.UP_DROP)
+    print(f'Using U-Net model with {N_LANDMARKS_PER_SIDE} landmarks')
 else:
     raise ValueError(f"Unknown model type: {args.MODEL}")
    

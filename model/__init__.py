@@ -1,1 +1,1 @@
-from .unet_model import UNet, UnifiedUNet
+from .unet_model import UNet

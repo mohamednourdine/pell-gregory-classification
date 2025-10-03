@@ -50,24 +50,6 @@ class UpBlock(nn.Module):
         return x
 
 
-class AnatomicalConsistencyModule(nn.Module):
-    """Module to encourage anatomical consistency between left and right landmarks"""
-    def __init__(self, channels=10):
-        super().__init__()
-        self.channels = channels
-        
-    def forward(self, landmarks):
-        # Split into left (0-4) and right (5-9) landmarks
-        left_landmarks = landmarks[:, :5, :, :]
-        right_landmarks = landmarks[:, 5:, :, :]
-        
-        # Apply bilateral consistency (optional processing)
-        # For now, just return the landmarks as-is
-        # In future, could add cross-attention or other consistency mechanisms
-        
-        return landmarks
-
-
 class UNet(nn.Module):
 
     def __init__(self, in_ch, out_ch, down_drop, up_drop, predict_gaussian=False):
@@ -109,23 +91,3 @@ class UNet(nn.Module):
             """
             x_final[:, n_landmarks:, :, :] = F.softplus(x[:, n_landmarks:, :, :]) + 1e-6
         return x_final
-
-
-class UnifiedUNet(UNet):
-    """Unified U-Net for predicting both left and right landmarks simultaneously"""
-    
-    def __init__(self, in_ch=3, down_drop=[0.4, 0.4, 0.4, 0.4], up_drop=[0.4, 0.4, 0.4, 0.4], predict_gaussian=False):
-        # Initialize with 10 output channels (5 left + 5 right landmarks)
-        super().__init__(in_ch, 10, down_drop, up_drop, predict_gaussian)
-        
-        # Add anatomical consistency module
-        self.consistency_module = AnatomicalConsistencyModule(channels=10)
-        
-    def forward(self, x):
-        # Get landmark heatmaps from base U-Net
-        landmarks = super().forward(x)
-        
-        # Apply anatomical consistency
-        landmarks = self.consistency_module(landmarks)
-        
-        return landmarks
