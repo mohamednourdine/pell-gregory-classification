@@ -111,11 +111,9 @@ def radial_error_mm(true, pred):
 def get_radial_errors_mm_for_image(true_landmarks, predicted_landmarks):
     ''' 
         Returns an array containing the radial error for each landmark for the image.
-        Works with any number of landmarks (5 for single side, 10 for unified model).
     '''
-    n_landmarks = len(true_landmarks)
-    radial_errors = np.zeros(n_landmarks)
-    for lm in range(n_landmarks):
+    radial_errors = np.zeros(N_LANDMARKS)
+    for lm in range(N_LANDMARKS):
         radial_errors[lm] = radial_error_mm(true_landmarks[lm], predicted_landmarks[lm])
     return radial_errors
 

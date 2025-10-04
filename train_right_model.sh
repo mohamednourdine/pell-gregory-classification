@@ -29,13 +29,13 @@ do
         --EXPERIMENT_NAME right_side_experiment_$I \
         --MODEL unet \
         --SIDE right \
-        --BATCH_SIZE 16 \
+        --BATCH_SIZE 8 \
         --IMAGE_SIZE 256 \
         --GAUSS_SIGMA 5.0 \
         --GAUSS_AMPLITUDE 1000.0 \
         --LEARN_RATE 1e-3 \
-        --WEIGHT_DECAY 1e-4 \
-        --EPOCHS 60 \
+        --WEIGHT_DECAY 0.0 \
+        --EPOCHS 30 \
         --VALID_RATIO 0.15 \
         --DOWN_DROP '0.4,0.4,0.4,0.4' \
         --UP_DROP '0.4,0.4,0.4,0.4' \

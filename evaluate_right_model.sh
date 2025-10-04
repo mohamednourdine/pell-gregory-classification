@@ -10,11 +10,13 @@ echo "=========================================="
 echo "Right Side Pell-Gregory Model Evaluation"
 echo "=========================================="
 
-# Default parameters
+# Default parameters (matching old working code)
 MODEL_PATH="trained/right/RightSidePellGregory/1.pth"
 DATA_SPLIT="test"
-SAMPLES=15
+SAMPLES=5
 LOG_PATH="logs/right"
+GAUSS_SIGMA=5.0
+GAUSS_AMPLITUDE=1000.0
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -80,7 +82,9 @@ python generate_predictions_separate.py \
     --DATA_SPLIT "$DATA_SPLIT" \
     --LOG_PATH "$LOG_PATH" \
     --SAMPLES "$SAMPLES" \
-    --BATCH_SIZE 32
+    --BATCH_SIZE 30 \
+    --GAUSS_SIGMA "$GAUSS_SIGMA" \
+    --GAUSS_AMPLITUDE "$GAUSS_AMPLITUDE"
 
 if [ $? -ne 0 ]; then
     echo "ERROR: Prediction generation failed!"

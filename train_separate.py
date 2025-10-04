@@ -27,7 +27,7 @@ from utilities.common_utils import *
 from utilities.plotting import *
 from utilities.eval_utils import get_accuracy_metrics, get_radial_errors_mm_for_image
 from model.unet_model import UNet
-from utilities.landmark_utils import LandmarkDataset, get_max_heatmap_activation
+from utilities.landmark_utils import LandmarkDataset, get_max_heatmap_activation, radial_errors_batch
 
 ORIG_IMAGE_SIZE = np.array([ORIG_IMAGE_X, ORIG_IMAGE_Y])  # WxH
 random_id = int(random.uniform(0, 99999999))
@@ -166,6 +166,7 @@ def train_separate_model():
     net.to(device)
 
     # Setup optimizer and loss
+    criterion = nn.MSELoss()
     optimizer = optim.Adam(net.parameters(), lr=args.LEARN_RATE, weight_decay=args.WEIGHT_DECAY)
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=args.OPTIM_PATIENCE)
 
@@ -175,15 +176,15 @@ def train_separate_model():
     
     print(f'Training started at: {time.ctime()}')
     
-    best_val_mre = float('inf')
+    best_val_loss = float('inf')
     
     for epoch in range(1, args.EPOCHS + 1):
         epoch_start_time = time.time()
         
         # Training phase
         net.train()
-        train_loss_sum = 0.0
-        train_radial_errors = []
+        trained_examples = 0
+        train_loss, train_mre, train_sdr_2mm, train_sdr_2_5mm, train_sdr_3mm, train_sdr_4mm = 0, 0, 0, 0, 0, 0
         
         print(f'Starting training loop with {len(train_dl)} batches...')
         
@@ -196,35 +197,39 @@ def train_separate_model():
             
             optimizer.zero_grad()
             pred_heatmaps = net(images)
-            
-            loss = torch.mean((pred_heatmaps - true_heatmaps) ** 2)
+            loss = criterion(pred_heatmaps, true_heatmaps)
             loss.backward()
             optimizer.step()
             
-            train_loss_sum += loss.item()
-            
-            # Calculate radial errors for this batch
-            with torch.no_grad():
-                for i in range(images.shape[0]):
-                    pred_landmarks, _ = get_predicted_landmarks(pred_heatmaps[i].cpu().numpy(), args.GAUSS_SIGMA)
-                    true_landmarks, _ = get_predicted_landmarks(true_heatmaps[i].cpu().numpy(), args.GAUSS_SIGMA)
-                    radial_error = get_radial_errors_mm_for_image(true_landmarks, pred_landmarks)
-                    train_radial_errors.append(radial_error)  # Append the full array
+            # Metrics (using historical calculation method)
+            actual_bs = images.shape[0]
+            train_loss += loss * actual_bs  # Weighted by batch size
+            trained_examples += actual_bs
+
+            radial_errors = radial_errors_batch(pred_heatmaps, true_heatmaps, args.GAUSS_SIGMA)
+            mre = np.mean(radial_errors)
+            train_mre += mre * actual_bs
+            train_sdr_2mm += np.sum(radial_errors < 2)
+            train_sdr_2_5mm += np.sum(radial_errors < 2.5)
+            train_sdr_3mm += np.sum(radial_errors < 3)
+            train_sdr_4mm += np.sum(radial_errors < 4)
             
             # Clear memory
             del images, true_heatmaps, pred_heatmaps, loss
             torch.cuda.empty_cache() if torch.cuda.is_available() else None
             gc.collect()
         
-        train_loss_avg = train_loss_sum / len(train_dl)
-        # Flatten the list of radial error arrays properly  
-        train_radial_errors_flat = np.concatenate(train_radial_errors) if train_radial_errors else np.array([])
-        train_metrics = get_accuracy_metrics(train_radial_errors_flat.reshape(-1, N_LANDMARKS))
+        train_loss_avg = train_loss / trained_examples
+        train_mre_avg = train_mre / trained_examples
+        train_sdr_2mm_avg = train_sdr_2mm / (trained_examples * N_LANDMARKS)
+        train_sdr_2_5mm_avg = train_sdr_2_5mm / (trained_examples * N_LANDMARKS)
+        train_sdr_3mm_avg = train_sdr_3mm / (trained_examples * N_LANDMARKS)
+        train_sdr_4mm_avg = train_sdr_4mm / (trained_examples * N_LANDMARKS)
         
         # Validation phase
         net.eval()
-        val_loss_sum = 0.0
-        val_radial_errors = []
+        val_loss, val_mre, val_sdr_2mm, val_sdr_2_5mm, val_sdr_3mm, val_sdr_4mm = 0, 0, 0, 0, 0, 0
+        val_examples = 0
         
         with torch.no_grad():
             for images, true_heatmaps, _ in valid_dl:
@@ -232,45 +237,53 @@ def train_separate_model():
                 true_heatmaps = true_heatmaps.to(device)
                 
                 pred_heatmaps = net(images)
-                loss = torch.mean((pred_heatmaps - true_heatmaps) ** 2)
-                val_loss_sum += loss.item()
-                
-                # Calculate radial errors for validation
-                for i in range(images.shape[0]):
-                    pred_landmarks, _ = get_predicted_landmarks(pred_heatmaps[i].cpu().numpy(), args.GAUSS_SIGMA)
-                    true_landmarks, _ = get_predicted_landmarks(true_heatmaps[i].cpu().numpy(), args.GAUSS_SIGMA)
-                    radial_error = get_radial_errors_mm_for_image(true_landmarks, pred_landmarks)
-                    val_radial_errors.append(radial_error)  # Append the full array
+                loss = criterion(pred_heatmaps, true_heatmaps)
+
+                actual_bs = images.shape[0]
+                val_loss += loss * actual_bs
+                val_examples += actual_bs
+
+                radial_errors = radial_errors_batch(pred_heatmaps, true_heatmaps, args.GAUSS_SIGMA)
+                mre = np.mean(radial_errors)
+                val_mre += mre * actual_bs
+                val_sdr_2mm += np.sum(radial_errors < 2)
+                val_sdr_2_5mm += np.sum(radial_errors < 2.5)
+                val_sdr_3mm += np.sum(radial_errors < 3)
+                val_sdr_4mm += np.sum(radial_errors < 4)
         
-        val_loss_avg = val_loss_sum / len(valid_dl)
-        # Flatten the list of radial error arrays properly
-        val_radial_errors_flat = np.concatenate(val_radial_errors) if val_radial_errors else np.array([])
-        val_metrics = get_accuracy_metrics(val_radial_errors_flat.reshape(-1, N_LANDMARKS))
+        val_loss_avg = val_loss / val_examples
+        val_mre_avg = val_mre / val_examples
+        val_sdr_2mm_avg = val_sdr_2mm / (val_examples * N_LANDMARKS)
+        val_sdr_2_5mm_avg = val_sdr_2_5mm / (val_examples * N_LANDMARKS)
+        val_sdr_3mm_avg = val_sdr_3mm / (val_examples * N_LANDMARKS)
+        val_sdr_4mm_avg = val_sdr_4mm / (val_examples * N_LANDMARKS)
         
         epoch_duration = time.time() - epoch_start_time
         
-        # Print results
-        print(f"Epoch: {epoch}, train_loss: {train_loss_avg:.5f}, train_MRE: {train_metrics['mre']:.2f}, "
-              f"train_SDR_2mm: {train_metrics['sdr_2']:.5f}, train_SDR_2_5mm: {train_metrics['sdr_2_5']:.5f}, "
-              f"train_SDR_3mm: {train_metrics['sdr_3']:.5f}, train_SDR_4mm: {train_metrics['sdr_4']:.5f}, ")
+        # Print results (matching old format exactly)
+        print(f"Epoch: {epoch}, train_loss: {train_loss_avg:.5f}, train_MRE: {train_mre_avg:.2f}, "
+              f"train_SDR_2mm: {train_sdr_2mm_avg:.5f}, train_SDR_2_5mm: {train_sdr_2_5mm_avg:.5f}, "
+              f"train_SDR_3mm: {train_sdr_3mm_avg:.5f}, train_SDR_4mm: {train_sdr_4mm_avg:.5f}, ")
         print(f"Duration: {epoch_duration:.0f} seconds")
-        print(f"val_loss: {val_loss_avg:.5f}, val_MRE: {val_metrics['mre']:.2f}, "
-              f"val_SDR_2mm: {val_metrics['sdr_2']:.5f} val_SDR_2_5mm: {val_metrics['sdr_2_5']:.5f} "
-              f"val_SDR_3mm: {val_metrics['sdr_3']:.5f} val_SDR_4mm: {val_metrics['sdr_4']:.5f}")
+        print(f"val_loss: {val_loss_avg:.5f}, val_MRE: {val_mre_avg:.2f}, "
+              f"val_SDR_2mm: {val_sdr_2mm_avg:.5f} val_SDR_2_5mm: {val_sdr_2_5mm_avg:.5f} "
+              f"val_SDR_3mm: {val_sdr_3mm_avg:.5f} val_SDR_4mm: {val_sdr_4mm_avg:.5f}")
         print("_" * 76)
         
-        # Save model if validation improved or at specified epochs
-        if val_metrics['mre'] < best_val_mre or epoch in args.SAVE_EPOCHS:
-            best_val_mre = min(best_val_mre, val_metrics['mre'])
+        # Save model if validation improved or at specified epochs  
+        if val_loss_avg < best_val_loss * 0.9999 or epoch in args.SAVE_EPOCHS:
+            best_val_loss = min(best_val_loss, val_loss_avg)
             model_path = model_save_path / f'{args.MODEL_NAME}.pth'
+            # Ensure the directory exists
+            model_path.parent.mkdir(parents=True, exist_ok=True)
             print(f'Saving model checkpoint to {model_path}.')
             torch.save(net, model_path)
         
         # Update learning rate
-        scheduler.step(val_metrics['mre'])
+        scheduler.step(val_loss_avg)
         
         # Early stopping check
-        if val_metrics['mre'] < args.VAL_MRE_STOP:
+        if args.VAL_MRE_STOP is not None and val_mre_avg < args.VAL_MRE_STOP:
             print(f'Stopping experiment due to validation MRE below {args.VAL_MRE_STOP}.')
             break
     

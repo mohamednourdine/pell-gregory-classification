@@ -19,6 +19,8 @@ from .common_utils import *
 # Parameter for gaussian filter
 GAUSSIAN_TRUNCATE = 1.0
 
+N_LANDMARKS = 5
+
 
 def get_annots_for_image(annotations_path, image_path, rescaled_image_size=None, orig_image_size=np.array([ORIG_IMAGE_X, ORIG_IMAGE_Y])):
     '''
@@ -190,6 +192,21 @@ def get_max_heatmap_activation(tensor, gauss_sigma):
     activations = ndimage.gaussian_filter(array, sigma=gauss_sigma, truncate=GAUSSIAN_TRUNCATE)
     max_val, max_pos = np_max_yx(activations)
     return max_val, max_pos
+
+
+def get_predicted_landmarks(pred_heatmaps, gauss_sigma):
+    """Extract predicted landmarks from heatmaps using old working method"""
+    n_landmarks = pred_heatmaps.shape[0]
+    heatmap_y, heatmap_x = pred_heatmaps.shape[1:]
+    pred_landmarks = np.zeros((n_landmarks, 2))
+    max_activations = np.zeros(n_landmarks)
+    for i in range(n_landmarks):
+        max_activation, pred_yx = get_max_heatmap_activation(pred_heatmaps[i], gauss_sigma)
+        rescale = np.array([ORIG_IMAGE_Y, ORIG_IMAGE_X]) / np.array([heatmap_y, heatmap_x])
+        pred_yx = np.around(pred_yx * rescale)
+        pred_landmarks[i] = pred_yx
+        max_activations[i] = max_activation
+    return pred_landmarks, max_activations
 
 
 def radial_errors_calcalation(pred, targ, gauss_sigma, orig_image_x=ORIG_IMAGE_X, orig_image_y=ORIG_IMAGE_Y):

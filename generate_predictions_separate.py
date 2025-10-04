@@ -13,23 +13,25 @@ from pathlib import Path
 import time
 
 from utilities.common_utils import *
-from utilities.landmark_utils import LandmarkDataset
+from utilities.landmark_utils import LandmarkDataset, get_max_heatmap_activation
 
 def get_predicted_landmarks_single(heatmap, gauss_sigma):
-    """Extract predicted landmarks from single side heatmap"""
-    predicted_landmarks = []
-    max_activations = []
+    """Extract predicted landmarks from single side heatmap using old working method"""
+    n_landmarks = heatmap.shape[0]
+    heatmap_y, heatmap_x = heatmap.shape[1:]
+    pred_landmarks = np.zeros((n_landmarks, 2))
+    max_activations = np.zeros(n_landmarks)
     
-    for i in range(N_LANDMARKS):
-        landmark_heatmap = heatmap[i]
-        max_activation = np.max(landmark_heatmap)
-        max_activations.append(max_activation)
-        
-        # Get coordinates of maximum activation
-        coords = np.unravel_index(np.argmax(landmark_heatmap), landmark_heatmap.shape)
-        predicted_landmarks.append([coords[1], coords[0]])  # x, y format
+    for i in range(n_landmarks):
+        # Use old working method with Gaussian filtering
+        max_activation, pred_yx = get_max_heatmap_activation(heatmap[i], gauss_sigma)
+        # Apply proper coordinate rescaling like old code
+        rescale = np.array([ORIG_IMAGE_Y, ORIG_IMAGE_X]) / np.array([heatmap_y, heatmap_x])
+        pred_yx = np.around(pred_yx * rescale)
+        pred_landmarks[i] = pred_yx
+        max_activations[i] = max_activation
     
-    return np.array(predicted_landmarks), np.array(max_activations)
+    return pred_landmarks, max_activations
 
 def main():
     parser = argparse.ArgumentParser(description='Separate Model Prediction Generator')
@@ -38,8 +40,8 @@ def main():
                         help='Which side to predict: left (37-38) or right (47-48)')
     parser.add_argument('--DATA_SPLIT', type=str, default='test', choices=['train', 'test'])
     parser.add_argument('--LOG_PATH', type=str, default='logs', help='Directory to save predictions')
-    parser.add_argument('--SAMPLES', type=int, default=10, help='Number of MC dropout samples')
-    parser.add_argument('--BATCH_SIZE', type=int, default=32, help='Batch size for prediction')
+    parser.add_argument('--SAMPLES', type=int, default=5, help='Number of MC dropout samples')
+    parser.add_argument('--BATCH_SIZE', type=int, default=30, help='Batch size for prediction')
     parser.add_argument('--GAUSS_SIGMA', type=float, default=5.0)
     parser.add_argument('--GAUSS_AMPLITUDE', type=float, default=1000.0)
 

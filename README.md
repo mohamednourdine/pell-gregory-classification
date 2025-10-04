@@ -138,15 +138,6 @@ Training is optimized for CPU with:
 - `TORCH_NUM_THREADS=4`
 - Batch size: 16
 
-## Recent Updates
-
-- ✅ Removed deprecated unified training code
-- ✅ Standardized constants (N_LANDMARKS = 5)
-- ✅ Fixed Path handling in dataset loading
-- ✅ Cleaned up deprecated functions and imports
-- ✅ Comprehensive validation and testing
-- ✅ Production-ready codebase
-
 ## Requirements
 
 - Python 3.8+
