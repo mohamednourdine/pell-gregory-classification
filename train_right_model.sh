@@ -29,10 +29,10 @@ do
         --EXPERIMENT_NAME right_side_experiment_$I \
         --MODEL unet \
         --SIDE right \
-        --BATCH_SIZE 8 \
+        --BATCH_SIZE 16 \
         --IMAGE_SIZE 256 \
         --GAUSS_SIGMA 5.0 \
-        --GAUSS_AMPLITUDE 1000.0 \
+        --GAUSS_AMPLITUDE 1500.0 \
         --LEARN_RATE 1e-3 \
         --WEIGHT_DECAY 0.0 \
         --EPOCHS 30 \

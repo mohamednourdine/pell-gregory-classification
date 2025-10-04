@@ -29,16 +29,16 @@ do
         --EXPERIMENT_NAME left_side_experiment_$I \
         --MODEL unet \
         --SIDE left \
-        --BATCH_SIZE 8 \
+        --BATCH_SIZE 16 \
         --IMAGE_SIZE 256 \
-        --GAUSS_SIGMA 2.0 \
-        --GAUSS_AMPLITUDE 100.0 \
+        --GAUSS_SIGMA 5.0 \
+        --GAUSS_AMPLITUDE 1500.0 \
         --LEARN_RATE 1e-3 \
         --WEIGHT_DECAY 0.0 \
         --EPOCHS 30 \
         --VALID_RATIO 0.15 \
-        --DOWN_DROP '0.4,0.4,0.4,0.4' \
-        --UP_DROP '0.4,0.4,0.4,0.4' \
+        --DOWN_DROP '0,0,0,0' \
+        --UP_DROP '0,0,0,0' \
         --USE_ELASTIC_TRANS False \
         --USE_AFFINE_TRANS False \
         --USE_HORIZONTAL_FLIP False \
